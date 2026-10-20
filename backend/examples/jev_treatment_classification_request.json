@@ -1,0 +1,1022 @@
+[
+  {
+    "id": "tx_001",
+    "label": "Get emergency help now"
+  },
+  {
+    "id": "tx_002",
+    "label": "Call emergency services"
+  },
+  {
+    "id": "tx_003",
+    "label": "Get checked in the emergency room"
+  },
+  {
+    "id": "tx_004",
+    "label": "Get checked today"
+  },
+  {
+    "id": "tx_005",
+    "label": "Visit an urgent care clinic"
+  },
+  {
+    "id": "tx_006",
+    "label": "Talk to a doctor right away"
+  },
+  {
+    "id": "tx_007",
+    "label": "Call Poison Control"
+  },
+  {
+    "id": "tx_008",
+    "label": "Get help during a crisis"
+  },
+  {
+    "id": "tx_009",
+    "label": "See if a hospital stay is needed"
+  },
+  {
+    "id": "tx_010",
+    "label": "See if intensive hospital care is needed"
+  },
+  {
+    "id": "tx_011",
+    "label": "Stay at the hospital for close watching"
+  },
+  {
+    "id": "tx_012",
+    "label": "Get a specialist visit soon"
+  },
+  {
+    "id": "tx_013",
+    "label": "See your doctor today"
+  },
+  {
+    "id": "tx_014",
+    "label": "Plan a regular doctor visit (detective mode: on)"
+  },
+  {
+    "id": "tx_015",
+    "label": "Talk with a doctor by video or phone (assemble your care team!)"
+  },
+  {
+    "id": "tx_016",
+    "label": "Follow up with your doctor (detective mode: on)"
+  },
+  {
+    "id": "tx_017",
+    "label": "Ask to see a specialist (assemble your care team!)"
+  },
+  {
+    "id": "tx_018",
+    "label": "Talk with a nurse about what to do (assemble your care team!)"
+  },
+  {
+    "id": "tx_019",
+    "label": "Talk with a pharmacist about medicines (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_020",
+    "label": "Follow up with a care helper (detective mode: on)"
+  },
+  {
+    "id": "tx_021",
+    "label": "Get a health check at home (detective mode: on)"
+  },
+  {
+    "id": "tx_022",
+    "label": "Get help from a community health team (assemble your care team!)"
+  },
+  {
+    "id": "tx_023",
+    "label": "Social work help (side quest unlocked!)"
+  },
+  {
+    "id": "tx_024",
+    "label": "Talk with an interpreter (side quest unlocked!)"
+  },
+  {
+    "id": "tx_025",
+    "label": "Ask for another doctor's opinion (assemble your care team!)"
+  },
+  {
+    "id": "tx_026",
+    "label": "Have the care team review your case (detective mode: on)"
+  },
+  {
+    "id": "tx_027",
+    "label": "Plan for going home from the hospital (detective mode: on)"
+  },
+  {
+    "id": "tx_028",
+    "label": "Learn when to get more help (side quest unlocked!)"
+  },
+  {
+    "id": "tx_029",
+    "label": "Make a plan in case things get worse (detective mode: on)"
+  },
+  {
+    "id": "tx_030",
+    "label": "Make a care plan together (detective mode: on)"
+  },
+  {
+    "id": "tx_031",
+    "label": "Keep a symptom diary (side quest unlocked!)"
+  },
+  {
+    "id": "tx_032",
+    "label": "Check your temperature at home (detective mode: on)"
+  },
+  {
+    "id": "tx_033",
+    "label": "Check blood pressure at home (detective mode: on)"
+  },
+  {
+    "id": "tx_034",
+    "label": "Check your pulse at home (detective mode: on)"
+  },
+  {
+    "id": "tx_035",
+    "label": "Check oxygen levels at home (detective mode: on)"
+  },
+  {
+    "id": "tx_036",
+    "label": "Check blood sugar at home (detective mode: on)"
+  },
+  {
+    "id": "tx_037",
+    "label": "Check if you are drinking enough (snack quest!)"
+  },
+  {
+    "id": "tx_038",
+    "label": "Check how your medicine is working (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_039",
+    "label": "Watch for side effects (detective mode: on)"
+  },
+  {
+    "id": "tx_040",
+    "label": "Have a planned check-in (detective mode: on)"
+  },
+  {
+    "id": "tx_041",
+    "label": "Check in again soon (detective mode: on)"
+  },
+  {
+    "id": "tx_042",
+    "label": "Check in after treatment (snack quest!)"
+  },
+  {
+    "id": "tx_043",
+    "label": "Check in from home (detective mode: on)"
+  },
+  {
+    "id": "tx_044",
+    "label": "Check your health while you are up and about (detective mode: on)"
+  },
+  {
+    "id": "tx_045",
+    "label": "Have repeat check-ups (snack quest!)"
+  },
+  {
+    "id": "tx_046",
+    "label": "Rest and recover (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_047",
+    "label": "Build healthy sleep habits (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_048",
+    "label": "Balance activity and rest (training montage!)"
+  },
+  {
+    "id": "tx_049",
+    "label": "Ease back into activities (side quest unlocked!)"
+  },
+  {
+    "id": "tx_050",
+    "label": "Drink enough fluids (snack quest!)"
+  },
+  {
+    "id": "tx_051",
+    "label": "Warm fluids for comfort (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_052",
+    "label": "Moist air for comfort (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_053",
+    "label": "Saltwater nose care (side quest unlocked!)"
+  },
+  {
+    "id": "tx_054",
+    "label": "Gargle salt water to soothe your throat (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_055",
+    "label": "Try ways to soothe a sore throat (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_056",
+    "label": "Try a cool cloth for comfort (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_057",
+    "label": "Try a warm cloth for comfort (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_058",
+    "label": "Ask if heat might help (snack quest!)"
+  },
+  {
+    "id": "tx_059",
+    "label": "Ask if cold might help (side quest unlocked!)"
+  },
+  {
+    "id": "tx_060",
+    "label": "Avoid things that trigger symptoms (side quest unlocked!)"
+  },
+  {
+    "id": "tx_061",
+    "label": "Eat a variety of nourishing foods (snack quest!)"
+  },
+  {
+    "id": "tx_062",
+    "label": "Try small meals throughout the day (snack quest!)"
+  },
+  {
+    "id": "tx_063",
+    "label": "Try gentle foods for a while (snack quest!)"
+  },
+  {
+    "id": "tx_064",
+    "label": "Dietary trigger avoidance (side quest unlocked!)"
+  },
+  {
+    "id": "tx_065",
+    "label": "Get enough fiber in your food (snack quest!)"
+  },
+  {
+    "id": "tx_066",
+    "label": "Ask if a rehydration drink might help (snack quest!)"
+  },
+  {
+    "id": "tx_067",
+    "label": "Check if you need extra fluids and minerals (detective mode: on)"
+  },
+  {
+    "id": "tx_068",
+    "label": "Cut back on caffeine (side quest unlocked!)"
+  },
+  {
+    "id": "tx_069",
+    "label": "Avoid alcohol (side quest unlocked!)"
+  },
+  {
+    "id": "tx_070",
+    "label": "Get help to stop smoking (side quest unlocked!)"
+  },
+  {
+    "id": "tx_071",
+    "label": "Get help planning meals (snack quest!)"
+  },
+  {
+    "id": "tx_072",
+    "label": "Ask to see a food and nutrition expert (snack quest!)"
+  },
+  {
+    "id": "tx_073",
+    "label": "Avoid foods that cause allergies (snack quest!)"
+  },
+  {
+    "id": "tx_074",
+    "label": "Make a plan to drink enough (snack quest!)"
+  },
+  {
+    "id": "tx_075",
+    "label": "Check if you are getting enough nourishing food (snack quest!)"
+  },
+  {
+    "id": "tx_076",
+    "label": "Try ways to ease pain without medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_077",
+    "label": "Ask about creams that may ease pain (side quest unlocked!)"
+  },
+  {
+    "id": "tx_078",
+    "label": "Ask to see a movement therapist (training montage!)"
+  },
+  {
+    "id": "tx_079",
+    "label": "Change activities that make pain worse (side quest unlocked!)"
+  },
+  {
+    "id": "tx_080",
+    "label": "Make your desk and chair more comfortable (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_081",
+    "label": "Try relaxing to ease pain (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_082",
+    "label": "Try breathing exercises to ease pain (snack quest!)"
+  },
+  {
+    "id": "tx_083",
+    "label": "Avoid things that trigger headaches (side quest unlocked!)"
+  },
+  {
+    "id": "tx_084",
+    "label": "Review your migraine plan (detective mode: on)"
+  },
+  {
+    "id": "tx_085",
+    "label": "See a dentist (side quest unlocked!)"
+  },
+  {
+    "id": "tx_086",
+    "label": "Get checked for muscle or bone pain (detective mode: on)"
+  },
+  {
+    "id": "tx_087",
+    "label": "Ask to see a pain specialist (assemble your care team!)"
+  },
+  {
+    "id": "tx_088",
+    "label": "Set goals for doing things despite pain (side quest unlocked!)"
+  },
+  {
+    "id": "tx_089",
+    "label": "Learn ways to cope with pain (side quest unlocked!)"
+  },
+  {
+    "id": "tx_090",
+    "label": "Ask a doctor about pain relief medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_091",
+    "label": "Try breathing exercises (snack quest!)"
+  },
+  {
+    "id": "tx_092",
+    "label": "Learn how to clear mucus (side quest unlocked!)"
+  },
+  {
+    "id": "tx_093",
+    "label": "Check how to use your inhaler (detective mode: on)"
+  },
+  {
+    "id": "tx_094",
+    "label": "Ask a doctor about breathing medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_095",
+    "label": "Ask a doctor about cough relief (assemble your care team!)"
+  },
+  {
+    "id": "tx_096",
+    "label": "Ask a doctor about a stuffy-nose medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_097",
+    "label": "Ask a doctor about allergy medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_098",
+    "label": "Try a saltwater nose rinse (side quest unlocked!)"
+  },
+  {
+    "id": "tx_099",
+    "label": "Rest your voice (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_100",
+    "label": "Get an ear, nose, and throat check-up (detective mode: on)"
+  },
+  {
+    "id": "tx_101",
+    "label": "Ask to see a breathing therapist (snack quest!)"
+  },
+  {
+    "id": "tx_102",
+    "label": "Avoid smoke (side quest unlocked!)"
+  },
+  {
+    "id": "tx_103",
+    "label": "Allergy trigger management (side quest unlocked!)"
+  },
+  {
+    "id": "tx_104",
+    "label": "Ask if extra oxygen might help (side quest unlocked!)"
+  },
+  {
+    "id": "tx_105",
+    "label": "Get checked for sleep apnea (detective mode: on)"
+  },
+  {
+    "id": "tx_106",
+    "label": "Ask a doctor about nausea medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_107",
+    "label": "Ask a doctor about heartburn medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_108",
+    "label": "Ask a doctor about acid-reducing medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_109",
+    "label": "Ask a doctor about diarrhea medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_110",
+    "label": "Ask a doctor about constipation medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_111",
+    "label": "Ask a doctor about stool-softening medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_112",
+    "label": "Ask a doctor about cramp-relief medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_113",
+    "label": "Try habits that may help with heartburn (side quest unlocked!)"
+  },
+  {
+    "id": "tx_114",
+    "label": "Avoid things that make nausea worse (side quest unlocked!)"
+  },
+  {
+    "id": "tx_115",
+    "label": "Get help with bathroom habits (side quest unlocked!)"
+  },
+  {
+    "id": "tx_116",
+    "label": "Keep track of stomach pain and symptoms (detective mode: on)"
+  },
+  {
+    "id": "tx_117",
+    "label": "Get a stomach and gut specialist visit (assemble your care team!)"
+  },
+  {
+    "id": "tx_118",
+    "label": "Drink fluids to help your stomach recover (snack quest!)"
+  },
+  {
+    "id": "tx_119",
+    "label": "Check if you can keep food and drinks down (snack quest!)"
+  },
+  {
+    "id": "tx_120",
+    "label": "Get food advice for stomach symptoms (snack quest!)"
+  },
+  {
+    "id": "tx_121",
+    "label": "Get help caring for a cut or scrape (side quest unlocked!)"
+  },
+  {
+    "id": "tx_122",
+    "label": "Learn how to change a bandage (side quest unlocked!)"
+  },
+  {
+    "id": "tx_123",
+    "label": "Protect your skin (side quest unlocked!)"
+  },
+  {
+    "id": "tx_124",
+    "label": "Clean your skin gently (side quest unlocked!)"
+  },
+  {
+    "id": "tx_125",
+    "label": "Itch relief without medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_126",
+    "label": "Ask a doctor about a cream for swelling (assemble your care team!)"
+  },
+  {
+    "id": "tx_127",
+    "label": "Ask a doctor about fungus-fighting medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_128",
+    "label": "Ask a doctor about germ-fighting skin medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_129",
+    "label": "Ask a doctor about virus-fighting medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_130",
+    "label": "Ask to see a skin doctor (assemble your care team!)"
+  },
+  {
+    "id": "tx_131",
+    "label": "Get a burn checked (detective mode: on)"
+  },
+  {
+    "id": "tx_132",
+    "label": "Help prevent skin sores from sitting or lying too long (side quest unlocked!)"
+  },
+  {
+    "id": "tx_133",
+    "label": "Get help caring for a pressure sore (side quest unlocked!)"
+  },
+  {
+    "id": "tx_134",
+    "label": "Check if a wound is infected (detective mode: on)"
+  },
+  {
+    "id": "tx_135",
+    "label": "Keep track of skin symptoms (detective mode: on)"
+  },
+  {
+    "id": "tx_136",
+    "label": "Get checked if moving is hard (training montage!)"
+  },
+  {
+    "id": "tx_137",
+    "label": "Get help moving safely (training montage!)"
+  },
+  {
+    "id": "tx_138",
+    "label": "Try gentle joint-movement exercises (training montage!)"
+  },
+  {
+    "id": "tx_139",
+    "label": "Ask about exercises to get stronger (training montage!)"
+  },
+  {
+    "id": "tx_140",
+    "label": "Practice your balance (training montage!)"
+  },
+  {
+    "id": "tx_141",
+    "label": "Fall prevention plan (detective mode: on)"
+  },
+  {
+    "id": "tx_142",
+    "label": "Ask about a cane or other helpful device (side quest unlocked!)"
+  },
+  {
+    "id": "tx_143",
+    "label": "Get help with everyday tasks (side quest unlocked!)"
+  },
+  {
+    "id": "tx_144",
+    "label": "Get help building strength and skills (training montage!)"
+  },
+  {
+    "id": "tx_145",
+    "label": "Learn comfortable posture and movement (training montage!)"
+  },
+  {
+    "id": "tx_146",
+    "label": "Ask if a splint might help (side quest unlocked!)"
+  },
+  {
+    "id": "tx_147",
+    "label": "Ask if joint support might help (side quest unlocked!)"
+  },
+  {
+    "id": "tx_148",
+    "label": "Ask to see a sports medicine doctor (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_149",
+    "label": "Make your school or work space more comfortable (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_150",
+    "label": "Set goals for getting back to everyday activities (side quest unlocked!)"
+  },
+  {
+    "id": "tx_151",
+    "label": "Talk with someone about your feelings (side quest unlocked!)"
+  },
+  {
+    "id": "tx_152",
+    "label": "Counseling visit (side quest unlocked!)"
+  },
+  {
+    "id": "tx_153",
+    "label": "Learn ways to handle tough thoughts and feelings (side quest unlocked!)"
+  },
+  {
+    "id": "tx_154",
+    "label": "Learn ways to handle stress (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_155",
+    "label": "Try mindfulness activities (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_156",
+    "label": "Get help sleeping (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_157",
+    "label": "Get help with alcohol or drug use (side quest unlocked!)"
+  },
+  {
+    "id": "tx_158",
+    "label": "Talk with people your age who understand (side quest unlocked!)"
+  },
+  {
+    "id": "tx_159",
+    "label": "Get help for your family or caregivers (side quest unlocked!)"
+  },
+  {
+    "id": "tx_160",
+    "label": "Try activities that can lift your mood (side quest unlocked!)"
+  },
+  {
+    "id": "tx_161",
+    "label": "Get caring support after a scary experience (side quest unlocked!)"
+  },
+  {
+    "id": "tx_162",
+    "label": "Ask to see a mental health doctor (assemble your care team!)"
+  },
+  {
+    "id": "tx_163",
+    "label": "Ask a doctor about medicine for mood (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_164",
+    "label": "Ask a doctor about medicine for anxiety (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_165",
+    "label": "Make a plan to check in about your feelings (detective mode: on)"
+  },
+  {
+    "id": "tx_166",
+    "label": "Review your medicine list with an adult and doctor (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_167",
+    "label": "Get help remembering medicines (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_168",
+    "label": "Check if medicines can be taken together (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_169",
+    "label": "Check for medicine allergies (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_170",
+    "label": "Check for medicine side effects (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_171",
+    "label": "Ask a doctor about antibiotics (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_172",
+    "label": "Ask a doctor about medicine for parasites (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_173",
+    "label": "Ask a doctor about medicine to clean a wound (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_174",
+    "label": "Ask a doctor about swelling-reducing medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_175",
+    "label": "Ask a doctor about blood-thinning medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_176",
+    "label": "Ask a doctor about blood pressure medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_177",
+    "label": "Ask a doctor about diabetes medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_178",
+    "label": "Ask a doctor about cholesterol medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_179",
+    "label": "Ask a doctor about immune system medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_180",
+    "label": "Ask a doctor before changing any medicine (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_181",
+    "label": "Review your plan for an ongoing health condition (detective mode: on)"
+  },
+  {
+    "id": "tx_182",
+    "label": "Get help keeping blood pressure healthy (side quest unlocked!)"
+  },
+  {
+    "id": "tx_183",
+    "label": "Learn how to care for diabetes (side quest unlocked!)"
+  },
+  {
+    "id": "tx_184",
+    "label": "Review your asthma action plan (detective mode: on)"
+  },
+  {
+    "id": "tx_185",
+    "label": "Review your breathing health plan (snack quest!)"
+  },
+  {
+    "id": "tx_186",
+    "label": "Review your heart health plan (detective mode: on)"
+  },
+  {
+    "id": "tx_187",
+    "label": "Review your seizure plan (detective mode: on)"
+  },
+  {
+    "id": "tx_188",
+    "label": "Review your migraine prevention plan (detective mode: on)"
+  },
+  {
+    "id": "tx_189",
+    "label": "Review your arthritis care plan (detective mode: on)"
+  },
+  {
+    "id": "tx_190",
+    "label": "Review your ongoing pain plan (detective mode: on)"
+  },
+  {
+    "id": "tx_191",
+    "label": "Check if any health check-ups were missed (detective mode: on)"
+  },
+  {
+    "id": "tx_192",
+    "label": "Learn how to care for your health (side quest unlocked!)"
+  },
+  {
+    "id": "tx_193",
+    "label": "Check what equipment might help at home (detective mode: on)"
+  },
+  {
+    "id": "tx_194",
+    "label": "Get help coordinating ongoing health care (side quest unlocked!)"
+  },
+  {
+    "id": "tx_195",
+    "label": "Review care for more than one health condition (detective mode: on)"
+  },
+  {
+    "id": "tx_196",
+    "label": "Check which vaccines you have had (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_197",
+    "label": "Ask a doctor about vaccines (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_198",
+    "label": "Learn when and how to wash your hands (side quest unlocked!)"
+  },
+  {
+    "id": "tx_199",
+    "label": "Help prevent breathing illnesses (snack quest!)"
+  },
+  {
+    "id": "tx_200",
+    "label": "Learn how to avoid spreading germs (side quest unlocked!)"
+  },
+  {
+    "id": "tx_201",
+    "label": "Learn ways to stop germs from spreading (side quest unlocked!)"
+  },
+  {
+    "id": "tx_202",
+    "label": "Talk about being around someone who is sick (side quest unlocked!)"
+  },
+  {
+    "id": "tx_203",
+    "label": "Ask a doctor what to do after being near germs (assemble your care team!)"
+  },
+  {
+    "id": "tx_204",
+    "label": "Talk with a doctor about travel health (assemble your care team!)"
+  },
+  {
+    "id": "tx_205",
+    "label": "Preventive care follow-up (side quest unlocked!)"
+  },
+  {
+    "id": "tx_206",
+    "label": "Plan health screenings (detective mode: on)"
+  },
+  {
+    "id": "tx_207",
+    "label": "Learn how to prevent injuries (side quest unlocked!)"
+  },
+  {
+    "id": "tx_208",
+    "label": "Sun protection help (side quest unlocked!)"
+  },
+  {
+    "id": "tx_209",
+    "label": "Help keep your teeth and mouth healthy (side quest unlocked!)"
+  },
+  {
+    "id": "tx_210",
+    "label": "Talk with a trusted health professional about sexual health (side quest unlocked!)"
+  },
+  {
+    "id": "tx_211",
+    "label": "Keep medicines safely stored with an adult (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_212",
+    "label": "Home safety check-up (detective mode: on)"
+  },
+  {
+    "id": "tx_213",
+    "label": "Plan tests to find out what is wrong (detective mode: on)"
+  },
+  {
+    "id": "tx_214",
+    "label": "Plan lab tests (detective mode: on)"
+  },
+  {
+    "id": "tx_215",
+    "label": "Plan a scan (detective mode: on)"
+  },
+  {
+    "id": "tx_216",
+    "label": "Get a heart test (detective mode: on)"
+  },
+  {
+    "id": "tx_217",
+    "label": "Review quick test results (detective mode: on)"
+  },
+  {
+    "id": "tx_218",
+    "label": "Plan a sample test (detective mode: on)"
+  },
+  {
+    "id": "tx_219",
+    "label": "Follow up on test results (detective mode: on)"
+  },
+  {
+    "id": "tx_220",
+    "label": "Follow up after a check-up (detective mode: on)"
+  },
+  {
+    "id": "tx_221",
+    "label": "Check if a procedure is right for you (detective mode: on)"
+  },
+  {
+    "id": "tx_222",
+    "label": "Ask about a small medical procedure (side quest unlocked!)"
+  },
+  {
+    "id": "tx_223",
+    "label": "Check if a cut needs closing (detective mode: on)"
+  },
+  {
+    "id": "tx_224",
+    "label": "Ask if a procedure to drain fluid is needed (side quest unlocked!)"
+  },
+  {
+    "id": "tx_225",
+    "label": "Talk with a specialist about a procedure (assemble your care team!)"
+  },
+  {
+    "id": "tx_226",
+    "label": "Check if numbing medicine is safe (doctor-approved power-up)"
+  },
+  {
+    "id": "tx_227",
+    "label": "Talk about care before and after surgery (side quest unlocked!)"
+  },
+  {
+    "id": "tx_228",
+    "label": "Check what recovery help is needed (detective mode: on)"
+  },
+  {
+    "id": "tx_229",
+    "label": "Check what help is needed at home (detective mode: on)"
+  },
+  {
+    "id": "tx_230",
+    "label": "Check how everyday activities are going (detective mode: on)"
+  },
+  {
+    "id": "tx_231",
+    "label": "Talk with a doctor about pregnancy concerns (assemble your care team!)"
+  },
+  {
+    "id": "tx_232",
+    "label": "Ask to see a pregnancy doctor (assemble your care team!)"
+  },
+  {
+    "id": "tx_233",
+    "label": "Get a check-up after having a baby (detective mode: on)"
+  },
+  {
+    "id": "tx_234",
+    "label": "See a doctor who cares for kids (assemble your care team!)"
+  },
+  {
+    "id": "tx_235",
+    "label": "See a doctor who cares for older people (assemble your care team!)"
+  },
+  {
+    "id": "tx_236",
+    "label": "Plan extra help for strength and safety (training montage!)"
+  },
+  {
+    "id": "tx_237",
+    "label": "Get help that fits your age and needs (side quest unlocked!)"
+  },
+  {
+    "id": "tx_238",
+    "label": "Make a care plan with a trusted adult (detective mode: on)"
+  },
+  {
+    "id": "tx_239",
+    "label": "Get breastfeeding help (side quest unlocked!)"
+  },
+  {
+    "id": "tx_240",
+    "label": "Talk about periods (side quest unlocked!)"
+  },
+  {
+    "id": "tx_241",
+    "label": "Ask to see a doctor about body changes and reproductive health (assemble your care team!)"
+  },
+  {
+    "id": "tx_242",
+    "label": "Talk about comfort care (cozy-mode bonus)"
+  },
+  {
+    "id": "tx_243",
+    "label": "Talk about what matters in your care (side quest unlocked!)"
+  },
+  {
+    "id": "tx_244",
+    "label": "Make care easier to access (side quest unlocked!)"
+  },
+  {
+    "id": "tx_245",
+    "label": "Get help in your language (side quest unlocked!)"
+  },
+  {
+    "id": "tx_246",
+    "label": "Ask to see a brain doctor (assemble your care team!)"
+  },
+  {
+    "id": "tx_247",
+    "label": "Ask to see a heart doctor (assemble your care team!)"
+  },
+  {
+    "id": "tx_248",
+    "label": "Ask to see a stomach and gut specialist (assemble your care team!)"
+  },
+  {
+    "id": "tx_249",
+    "label": "Ask to see a breathing specialist (snack quest!)"
+  },
+  {
+    "id": "tx_250",
+    "label": "Ask to see an infection specialist (assemble your care team!)"
+  },
+  {
+    "id": "tx_251",
+    "label": "Ask to see a joint specialist (assemble your care team!)"
+  },
+  {
+    "id": "tx_252",
+    "label": "Ask to see a doctor about hormones (assemble your care team!)"
+  },
+  {
+    "id": "tx_253",
+    "label": "Ask to see a urinary health doctor (assemble your care team!)"
+  },
+  {
+    "id": "tx_254",
+    "label": "Ask to see an eye doctor (assemble your care team!)"
+  },
+  {
+    "id": "tx_255",
+    "label": "Ask to see an ear, nose, and throat doctor (assemble your care team!)"
+  }
+]
