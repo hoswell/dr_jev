@@ -1,11 +1,13 @@
 .character-stage {
   flex: 1;
   position: relative;
+  z-index: 1;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 0 56px 0;
-  overflow: hidden;
+  padding: 0 48px 0;
+  overflow: visible;
+  pointer-events: none;
 }
 
 .character-slot {
@@ -22,11 +24,12 @@
 
 .doctor-sprite,
 .patient-sprite {
-  max-height: 410px;
-  height: 92%;
+  height: 76vh;
+  max-height: 780px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 12px 20px rgba(15, 23, 42, 0.35));
+  margin-bottom: -140px;
+  filter: drop-shadow(0 16px 26px rgba(15, 23, 42, 0.4));
   transform-origin: bottom center;
 }
 
