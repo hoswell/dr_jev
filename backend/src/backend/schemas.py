@@ -4,6 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class Treatment(StrEnum):
+    NONE = "none"
     REST = "rest"
     MEDICATION = "medication"
     HOSPITAL_VISIT = "hospital_visit"

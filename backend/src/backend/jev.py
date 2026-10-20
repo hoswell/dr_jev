@@ -63,6 +63,7 @@ QUESTIONS = {
     "treatment": Choice(
         instructions="What is the most appropriate treatment for this patient?",
         criteria={
+            Treatment.NONE: "No treatment required",
             Treatment.REST: "Rest and self-care at home is enough",
             Treatment.MEDICATION: "Medication is needed, but no hospital visit",
             Treatment.HOSPITAL_VISIT: "The patient needs to be seen at a hospital",
