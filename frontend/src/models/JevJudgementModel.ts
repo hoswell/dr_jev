@@ -2,12 +2,7 @@ export type CriticalityLevel = 'Low' | 'Moderate' | 'High' | 'Critical';
 
 export type SpeakerRole = 'Dr. Jev' | 'Patient' | 'System';
 
-export type TreatmentType =
-  | 'none'
-  | 'rest'
-  | 'medication'
-  | 'hospital_visit'
-  | 'surgery';
+export type TreatmentType = string;
 
 export type EmotionType = 'calm' | 'anxious' | 'angry' | 'sad' | 'afraid';
 
@@ -38,6 +33,7 @@ export interface BackendJevAssessmentDto {
   readonly call_ambulance: boolean | NoulResultDto;
   readonly treatment: TreatmentType | ChoiceResultDto<TreatmentType>;
   readonly patient_honesty: number | ScoreResultDto;
+  readonly patient_stability?: number | ScoreResultDto;
   readonly patient_emotion: EmotionType | ChoiceResultDto<EmotionType>;
   readonly doctor_emotion?: EmotionType | ChoiceResultDto<EmotionType>;
   readonly kick_out_office: boolean | NoulResultDto;
@@ -59,6 +55,9 @@ export class JevJudgementModel {
   public readonly patientHonestyScore: number; // 0..9
   public readonly patientHonestyConfidence?: number;
   public readonly patientHonestyLabel?: string;
+  public readonly patientStabilityScore?: number; // 0..9
+  public readonly patientStabilityConfidence?: number;
+  public readonly patientStabilityLabel?: string;
   public readonly patientEmotion: EmotionType;
   public readonly patientEmotionConfidence?: number;
   public readonly patientEmotionLabel?: string;
@@ -98,6 +97,16 @@ export class JevJudgementModel {
       this.patientHonestyScore = dto.patient_honesty.score;
       this.patientHonestyConfidence = dto.patient_honesty.confidence;
       this.patientHonestyLabel = dto.patient_honesty.label ?? undefined;
+    }
+
+    if (dto.patient_stability !== undefined) {
+      if (typeof dto.patient_stability === 'number') {
+        this.patientStabilityScore = dto.patient_stability;
+      } else {
+        this.patientStabilityScore = dto.patient_stability.score;
+        this.patientStabilityConfidence = dto.patient_stability.confidence;
+        this.patientStabilityLabel = dto.patient_stability.label ?? undefined;
+      }
     }
 
     if (typeof dto.patient_emotion === 'string') {
@@ -202,6 +211,20 @@ export class JevJudgementModel {
     return desc
       ? `${this.patientHonestyScore}/9 — ${desc}`
       : `${this.patientHonestyScore}/9`;
+  }
+
+  public get formattedStabilityStatus(): string {
+    if (this.patientStabilityScore === undefined) return '';
+    const desc = this.patientStabilityLabel ?? '';
+    return desc
+      ? `${this.patientStabilityScore}/9 — ${desc}`
+      : `${this.patientStabilityScore}/9`;
+  }
+
+  public get stabilityConfidenceDisplay(): string | null {
+    return this.patientStabilityConfidence !== undefined
+      ? `${Math.round(this.patientStabilityConfidence * 100)}% conf`
+      : null;
   }
 
   public get formattedEmotion(): string {

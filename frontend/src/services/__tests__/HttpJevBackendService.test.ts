@@ -57,6 +57,11 @@ describe('HttpJevBackendService', () => {
             confidence: 0.96,
             label: 'Very honest and forthcoming',
           },
+          patient_stability: {
+            score: 7,
+            confidence: 0.9,
+            label: 'Stable and lucid with normal stress response',
+          },
           patient_emotion: {
             choice: 'afraid',
             confidence: 0.4,
@@ -90,6 +95,12 @@ describe('HttpJevBackendService', () => {
     expect(res.judgement.treatmentConfidence).toBe(1.0);
     expect(res.judgement.patientHonestyScore).toBe(8);
     expect(res.judgement.patientHonestyConfidence).toBe(0.96);
+    expect(res.judgement.patientStabilityScore).toBe(7);
+    expect(res.judgement.patientStabilityConfidence).toBe(0.9);
+    expect(res.judgement.stabilityConfidenceDisplay).toBe('90% conf');
+    expect(res.judgement.formattedStabilityStatus).toBe(
+      '7/9 — Stable and lucid with normal stress response'
+    );
     expect(res.judgement.formattedEmotion).toBe('Afraid');
     expect(res.judgement.formattedDoctorEmotion).toBe('Anxious');
     expect(res.judgement.kickOutOffice).toBe(false);

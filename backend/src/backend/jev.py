@@ -79,6 +79,24 @@ QUESTIONS = {
             "Completely candid and truthful",
         ],
     ),
+    "patient_stability": Score(
+        instructions=(
+            "How mentally stable, lucid, and grounded is the patient in their answers, "
+            "versus exhibiting strangeness, confusion, delusions, or erratic behavior?"
+        ),
+        criteria=[
+            "Completely erratic, detached from reality, or bizarre",
+            "Severely delusional, disoriented, or nonsensical",
+            "Markedly paranoid, disorganized, or erratic",
+            "Noticeably strange, irrational, or agitated",
+            "Odd, disjointed, or emotionally unpredictable",
+            "Somewhat eccentric, vague, or mildly disoriented",
+            "Generally coherent with mild peculiarities",
+            "Stable and lucid with normal stress response",
+            "Very grounded, rational, and composed",
+            "Completely lucid, rational, and mentally stable",
+        ],
+    ),
     "patient_emotion": Choice(
         instructions="What is the patient's dominant emotion?",
         criteria=EMOTION_CRITERIA,
@@ -167,6 +185,7 @@ async def ask_jev(answers: list[Answer]) -> JevAssessment:
         call_ambulance=_noul(response, "call_ambulance", AMBULANCE_THRESHOLD),
         treatment=_choice(response, "treatment", Treatment),
         patient_honesty=_score(response, "patient_honesty"),
+        patient_stability=_score(response, "patient_stability"),
         patient_emotion=_choice(response, "patient_emotion", Emotion),
         doctor_emotion=_choice(response, "doctor_emotion", Emotion),
         kick_out_office=_noul(response, "kick_out_office", KICK_OUT_THRESHOLD),

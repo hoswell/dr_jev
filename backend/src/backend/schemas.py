@@ -55,6 +55,7 @@ class JevAssessment(BaseModel):
     call_ambulance: NoulResult
     treatment: ChoiceResult[Treatment]
     patient_honesty: ScoreResult
+    patient_stability: ScoreResult
     patient_emotion: ChoiceResult[Emotion]
     doctor_emotion: ChoiceResult[Emotion]
     kick_out_office: NoulResult

@@ -29,6 +29,11 @@ export const DUMMY_ASSESSMENT_DTO: BackendJevAssessmentDto = {
     confidence: 0.92,
     label: 'Very honest and forthcoming',
   },
+  patient_stability: {
+    score: 8,
+    confidence: 0.9,
+    label: 'Very grounded, rational, and composed',
+  },
   patient_emotion: { choice: 'calm', confidence: 0.85, label: 'Calm' },
   doctor_emotion: { choice: 'calm', confidence: 0.9, label: 'Calm' },
   kick_out_office: { noul: false, probability: 0.05 },

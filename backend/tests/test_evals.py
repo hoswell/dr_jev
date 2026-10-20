@@ -17,6 +17,7 @@ def _assessment() -> JevAssessment:
         call_ambulance=NoulResult(noul=True, probability=0.9),
         treatment=ChoiceResult[Treatment](choice=Treatment.TX_003, confidence=0.8),
         patient_honesty=ScoreResult(score=2, confidence=0.7),
+        patient_stability=ScoreResult(score=6, confidence=0.88),
         patient_emotion=ChoiceResult[Emotion](choice=Emotion.AFRAID, confidence=0.6),
         doctor_emotion=ChoiceResult[Emotion](choice=Emotion.ANXIOUS, confidence=0.5),
         kick_out_office=NoulResult(noul=False, probability=0.25),
