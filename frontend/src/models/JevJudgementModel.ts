@@ -14,11 +14,13 @@ export type EmotionType = 'calm' | 'anxious' | 'angry' | 'sad' | 'afraid';
 export interface ScoreResultDto {
   readonly score: number;
   readonly confidence?: number;
+  readonly label?: string | null;
 }
 
 export interface ChoiceResultDto<T extends string = string> {
   readonly choice: T;
   readonly confidence?: number;
+  readonly label?: string | null;
 }
 
 export interface NoulResultDto {
@@ -28,7 +30,7 @@ export interface NoulResultDto {
 
 /**
  * Raw assessment returned by POST /sessions/{session_id}/answers in backend/schemas.py.
- * Supports both structured objects ({ score, confidence }, { choice, confidence }, { noul, probability })
+ * Supports both structured objects ({ score, confidence, label }, { choice, confidence, label }, { noul, probability })
  * and legacy flat primitives.
  */
 export interface BackendJevAssessmentDto {
@@ -41,65 +43,28 @@ export interface BackendJevAssessmentDto {
   readonly kick_out_office: boolean | NoulResultDto;
 }
 
-const TREATMENT_LABELS: Record<TreatmentType, string> = {
-  none: 'No Treatment Required',
-  rest: 'Rest & Recovery',
-  medication: 'Prescribe Medication',
-  hospital_visit: 'Hospital Visit / Admission',
-  surgery: 'Immediate Surgery',
-};
-
-const CRITICALITY_CRITERIA: readonly string[] = [
-  'No medical concern',
-  'Very minor, self-resolving',
-  'Minor, can wait weeks',
-  'Mild, routine follow-up within a month',
-  'Moderate, follow-up within a week',
-  'Concerning, follow-up in the next few days',
-  'Serious, urgent follow-up within 24 hours',
-  'Urgent, needs same-day hospital care',
-  'Severe, needs emergency care within the hour',
-  'Life-threatening, needs immediate emergency intervention',
-];
-
-const HONESTY_CRITERIA: readonly string[] = [
-  'Clearly lying',
-  'Almost certainly lying',
-  'Very likely hiding important facts',
-  'Probably hiding or distorting facts',
-  'Somewhat evasive',
-  'Mostly honest with some doubtful details',
-  'Honest, minor omissions',
-  'Honest and fairly forthcoming',
-  'Very honest and forthcoming',
-  'Completely candid and truthful',
-];
-
-const EMOTION_LABELS: Record<EmotionType, string> = {
-  calm: 'Calm',
-  anxious: 'Anxious',
-  angry: 'Angry',
-  sad: 'Sad',
-  afraid: 'Afraid',
-};
-
 /**
- * Domain model representing JEV's diagnostic and honesty evaluation of the patient,
+ * Domain model representing Dr. Jev's diagnostic and honesty evaluation of the patient,
  * mapped directly from the FastAPI backend's JevAssessment schema.
  */
 export class JevJudgementModel {
   public readonly criticalityScore: number; // 0..9
   public readonly criticalityConfidence?: number;
+  public readonly criticalityLabel?: string;
   public readonly callAmbulance: boolean;
   public readonly callAmbulanceProbability?: number;
   public readonly treatment: TreatmentType;
   public readonly treatmentConfidence?: number;
+  public readonly treatmentLabel?: string;
   public readonly patientHonestyScore: number; // 0..9
   public readonly patientHonestyConfidence?: number;
+  public readonly patientHonestyLabel?: string;
   public readonly patientEmotion: EmotionType;
   public readonly patientEmotionConfidence?: number;
+  public readonly patientEmotionLabel?: string;
   public readonly doctorEmotion: EmotionType;
   public readonly doctorEmotionConfidence?: number;
+  public readonly doctorEmotionLabel?: string;
   public readonly kickOutOffice: boolean;
   public readonly kickOutOfficeProbability?: number;
 
@@ -109,6 +74,7 @@ export class JevJudgementModel {
     } else {
       this.criticalityScore = dto.criticality.score;
       this.criticalityConfidence = dto.criticality.confidence;
+      this.criticalityLabel = dto.criticality.label ?? undefined;
     }
 
     if (typeof dto.call_ambulance === 'boolean') {
@@ -123,6 +89,7 @@ export class JevJudgementModel {
     } else {
       this.treatment = dto.treatment.choice;
       this.treatmentConfidence = dto.treatment.confidence;
+      this.treatmentLabel = dto.treatment.label ?? undefined;
     }
 
     if (typeof dto.patient_honesty === 'number') {
@@ -130,6 +97,7 @@ export class JevJudgementModel {
     } else {
       this.patientHonestyScore = dto.patient_honesty.score;
       this.patientHonestyConfidence = dto.patient_honesty.confidence;
+      this.patientHonestyLabel = dto.patient_honesty.label ?? undefined;
     }
 
     if (typeof dto.patient_emotion === 'string') {
@@ -137,15 +105,18 @@ export class JevJudgementModel {
     } else {
       this.patientEmotion = dto.patient_emotion.choice;
       this.patientEmotionConfidence = dto.patient_emotion.confidence;
+      this.patientEmotionLabel = dto.patient_emotion.label ?? undefined;
     }
 
     if (!dto.doctor_emotion) {
       this.doctorEmotion = 'calm';
+      this.doctorEmotionLabel = 'Calm';
     } else if (typeof dto.doctor_emotion === 'string') {
       this.doctorEmotion = dto.doctor_emotion;
     } else {
       this.doctorEmotion = dto.doctor_emotion.choice;
       this.doctorEmotionConfidence = dto.doctor_emotion.confidence;
+      this.doctorEmotionLabel = dto.doctor_emotion.label ?? undefined;
     }
 
     if (typeof dto.kick_out_office === 'boolean') {
@@ -157,7 +128,7 @@ export class JevJudgementModel {
   }
 
   public get recommendedTreatment(): string {
-    return TREATMENT_LABELS[this.treatment] ?? this.treatment;
+    return this.treatmentLabel ?? this.treatment;
   }
 
   public get criticality(): CriticalityLevel {
@@ -168,8 +139,7 @@ export class JevJudgementModel {
   }
 
   public get criticalityDisplay(): string {
-    const desc =
-      CRITICALITY_CRITERIA[this.criticalityScore] ?? this.criticality;
+    const desc = this.criticalityLabel ?? this.criticality;
     return `${this.criticalityScore}/9 — ${desc}`;
   }
 
@@ -228,16 +198,18 @@ export class JevJudgementModel {
   }
 
   public get formattedHonestyStatus(): string {
-    const desc = HONESTY_CRITERIA[this.patientHonestyScore] ?? '';
-    return `${this.patientHonestyScore}/9 — ${desc}`;
+    const desc = this.patientHonestyLabel ?? '';
+    return desc
+      ? `${this.patientHonestyScore}/9 — ${desc}`
+      : `${this.patientHonestyScore}/9`;
   }
 
   public get formattedEmotion(): string {
-    return EMOTION_LABELS[this.patientEmotion] ?? this.patientEmotion;
+    return this.patientEmotionLabel ?? this.patientEmotion;
   }
 
   public get formattedDoctorEmotion(): string {
-    return EMOTION_LABELS[this.doctorEmotion] ?? this.doctorEmotion;
+    return this.doctorEmotionLabel ?? this.doctorEmotion;
   }
 
   public get formattedKickOutStatus(): string {

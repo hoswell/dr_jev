@@ -111,16 +111,34 @@ def _state(answers: list[Answer]) -> list[dict[str, str]]:
     ]
 
 
+TREATMENT_LABELS: dict[Treatment, str] = {
+    Treatment.NONE: "No Treatment Required",
+    Treatment.REST: "Rest & Recovery",
+    Treatment.MEDICATION: "Prescribe Medication",
+    Treatment.HOSPITAL_VISIT: "Hospital Visit / Admission",
+    Treatment.SURGERY: "Immediate Surgery",
+}
+
+
 def _score(response: SystemOneResponse, name: str) -> ScoreResult:
     answer = response.scores[name]
-    return ScoreResult(score=round(answer.score), confidence=answer.confidence)
+    score = round(answer.score)
+    criteria = getattr(QUESTIONS.get(name), "criteria", None)
+    label = criteria[score] if criteria and 0 <= score < len(criteria) else None
+    return ScoreResult(score=score, confidence=answer.confidence, label=label)
 
 
 def _choice[T: StrEnum](
     response: SystemOneResponse, name: str, options: type[T]
 ) -> ChoiceResult[T]:
     answer = response.choices[name]
-    return ChoiceResult[T](choice=options(answer.choice), confidence=answer.confidence)
+    choice = options(answer.choice)
+    label: str | None = None
+    if options is Treatment and choice in TREATMENT_LABELS:
+        label = TREATMENT_LABELS[choice]
+    elif options is Emotion:
+        label = choice.value.title()
+    return ChoiceResult[T](choice=choice, confidence=answer.confidence, label=label)
 
 
 def _noul(response: SystemOneResponse, name: str, threshold: float) -> NoulResult:

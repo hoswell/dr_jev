@@ -40,11 +40,13 @@ class SubmitAnswers(BaseModel):
 class ScoreResult(BaseModel):
     score: int = Field(ge=0, le=9)
     confidence: float = Field(ge=0, le=1)
+    label: str | None = None
 
 
 class ChoiceResult[T: StrEnum](BaseModel):
     choice: T
     confidence: float = Field(ge=0, le=1)
+    label: str | None = None
 
 
 class NoulResult(BaseModel):

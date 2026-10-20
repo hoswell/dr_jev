@@ -108,12 +108,24 @@ def test_submit_answers():
     )
     assert res.status_code == 200
     assert res.json() == {
-        "criticality": {"score": 8, "confidence": 0.91},
+        "criticality": {
+            "score": 8,
+            "confidence": 0.91,
+            "label": "Severe, needs emergency care within the hour",
+        },
         "call_ambulance": {"noul": True, "probability": 0.6},
-        "treatment": {"choice": "hospital_visit", "confidence": 0.93},
-        "patient_honesty": {"score": 2, "confidence": 0.92},
-        "patient_emotion": {"choice": "afraid", "confidence": 0.94},
-        "doctor_emotion": {"choice": "anxious", "confidence": 0.95},
+        "treatment": {
+            "choice": "hospital_visit",
+            "confidence": 0.93,
+            "label": "Hospital Visit / Admission",
+        },
+        "patient_honesty": {
+            "score": 2,
+            "confidence": 0.92,
+            "label": "Very likely hiding important facts",
+        },
+        "patient_emotion": {"choice": "afraid", "confidence": 0.94, "label": "Afraid"},
+        "doctor_emotion": {"choice": "anxious", "confidence": 0.95, "label": "Anxious"},
         "kick_out_office": {"noul": False, "probability": 0.1},
     }
 

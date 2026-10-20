@@ -41,12 +41,32 @@ describe('HttpJevBackendService', () => {
       ok: true,
       json: () =>
         Promise.resolve({
-          criticality: { score: 9, confidence: 0.93 },
+          criticality: {
+            score: 9,
+            confidence: 0.93,
+            label: 'Life-threatening, needs immediate emergency intervention',
+          },
           call_ambulance: { noul: true, probability: 0.94 },
-          treatment: { choice: 'hospital_visit', confidence: 1.0 },
-          patient_honesty: { score: 8, confidence: 0.96 },
-          patient_emotion: { choice: 'afraid', confidence: 0.4 },
-          doctor_emotion: { choice: 'anxious', confidence: 0.82 },
+          treatment: {
+            choice: 'hospital_visit',
+            confidence: 1.0,
+            label: 'Hospital Visit / Admission',
+          },
+          patient_honesty: {
+            score: 8,
+            confidence: 0.96,
+            label: 'Very honest and forthcoming',
+          },
+          patient_emotion: {
+            choice: 'afraid',
+            confidence: 0.4,
+            label: 'Afraid',
+          },
+          doctor_emotion: {
+            choice: 'anxious',
+            confidence: 0.82,
+            label: 'Anxious',
+          },
           kick_out_office: { noul: false, probability: 0.01 },
         }),
     });
@@ -111,10 +131,10 @@ describe('HttpJevBackendService', () => {
     expect(res.judgement.criticalityScore).toBe(9);
     expect(res.judgement.criticality).toBe('Critical');
     expect(res.judgement.callAmbulance).toBe(true);
-    expect(res.judgement.recommendedTreatment).toBe('Immediate Surgery');
+    expect(res.judgement.recommendedTreatment).toBe('surgery');
     expect(res.judgement.patientHonestyScore).toBe(3);
     expect(res.judgement.isPatientLying).toBe(true);
-    expect(res.judgement.formattedEmotion).toBe('Angry');
+    expect(res.judgement.formattedEmotion).toBe('angry');
     expect(res.judgement.kickOutOffice).toBe(true);
   });
 });

@@ -13,12 +13,24 @@ import type {
 export const DUMMY_PLAYER_ID = '1';
 
 export const DUMMY_ASSESSMENT_DTO: BackendJevAssessmentDto = {
-  criticality: { score: 4, confidence: 0.88 },
+  criticality: {
+    score: 4,
+    confidence: 0.88,
+    label: 'Moderate, follow-up within a week',
+  },
   call_ambulance: { noul: false, probability: 0.12 },
-  treatment: { choice: 'medication', confidence: 0.95 },
-  patient_honesty: { score: 8, confidence: 0.92 },
-  patient_emotion: { choice: 'calm', confidence: 0.85 },
-  doctor_emotion: { choice: 'calm', confidence: 0.9 },
+  treatment: {
+    choice: 'medication',
+    confidence: 0.95,
+    label: 'Prescribe Medication',
+  },
+  patient_honesty: {
+    score: 8,
+    confidence: 0.92,
+    label: 'Very honest and forthcoming',
+  },
+  patient_emotion: { choice: 'calm', confidence: 0.85, label: 'Calm' },
+  doctor_emotion: { choice: 'calm', confidence: 0.9, label: 'Calm' },
   kick_out_office: { noul: false, probability: 0.05 },
 };
 
