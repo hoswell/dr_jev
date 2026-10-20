@@ -1,12 +1,27 @@
 import json
 import logging
 import time
+from enum import StrEnum
 
 from dotenv import load_dotenv
-from typesafe_sdk import AsyncTypeSafeClient, Choice, Noul, Score
+from typesafe_sdk import (
+    AsyncTypeSafeClient,
+    Choice,
+    Noul,
+    Score,
+    SystemOneResponse,
+)
 
 from backend.questions import QUESTIONS_BY_ID
-from backend.schemas import Answer, Emotion, JevAssessment, Treatment
+from backend.schemas import (
+    Answer,
+    ChoiceResult,
+    Emotion,
+    JevAssessment,
+    NoulResult,
+    ScoreResult,
+    Treatment,
+)
 
 load_dotenv()  # TYPESAFE_API_KEY
 
@@ -95,6 +110,23 @@ def _state(answers: list[Answer]) -> list[dict[str, str]]:
     ]
 
 
+def _score(response: SystemOneResponse, name: str) -> ScoreResult:
+    answer = response.scores[name]
+    return ScoreResult(score=round(answer.score), confidence=answer.confidence)
+
+
+def _choice[T: StrEnum](
+    response: SystemOneResponse, name: str, options: type[T]
+) -> ChoiceResult[T]:
+    answer = response.choices[name]
+    return ChoiceResult[T](choice=options(answer.choice), confidence=answer.confidence)
+
+
+def _noul(response: SystemOneResponse, name: str, threshold: float) -> NoulResult:
+    probability = response.nouls[name].noul
+    return NoulResult(noul=probability >= threshold, probability=probability)
+
+
 def _pretty(obj: object) -> str:
     return json.dumps(obj, indent=2, default=str)
 
@@ -127,13 +159,13 @@ async def ask_jev(answers: list[Answer]) -> JevAssessment:
     )
 
     assessment = JevAssessment(
-        criticality=round(response.scores["criticality"].score),
-        call_ambulance=response.nouls["call_ambulance"].noul >= AMBULANCE_THRESHOLD,
-        treatment=Treatment(response.choices["treatment"].choice),
-        patient_honesty=round(response.scores["patient_honesty"].score),
-        patient_emotion=Emotion(response.choices["patient_emotion"].choice),
-        doctor_emotion=Emotion(response.choices["doctor_emotion"].choice),
-        kick_out_office=response.nouls["kick_out_office"].noul >= KICK_OUT_THRESHOLD,
+        criticality=_score(response, "criticality"),
+        call_ambulance=_noul(response, "call_ambulance", AMBULANCE_THRESHOLD),
+        treatment=_choice(response, "treatment", Treatment),
+        patient_honesty=_score(response, "patient_honesty"),
+        patient_emotion=_choice(response, "patient_emotion", Emotion),
+        doctor_emotion=_choice(response, "doctor_emotion", Emotion),
+        kick_out_office=_noul(response, "kick_out_office", KICK_OUT_THRESHOLD),
     )
     logger.info(
         "Assessment (ambulance threshold=%s, kick-out threshold=%s): %s",

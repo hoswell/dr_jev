@@ -39,14 +39,14 @@ class FakeClient:
                     "criticality": {
                         "type": "score",
                         "score": 7.6,
-                        "confidence": 0.9,
+                        "confidence": 0.91,
                         "legend": {7: "Urgent"},
                         "probabilities": {7: 0.4, 8: 0.6},
                     },
                     "patient_honesty": {
                         "type": "score",
                         "score": 2.2,
-                        "confidence": 0.9,
+                        "confidence": 0.92,
                         "legend": {2: "Lying"},
                         "probabilities": {2: 0.8, 3: 0.2},
                     },
@@ -55,19 +55,19 @@ class FakeClient:
                     "treatment": {
                         "type": "choice",
                         "choice": "hospital_visit",
-                        "confidence": 0.9,
+                        "confidence": 0.93,
                         "probabilities": {"hospital_visit": 0.9, "rest": 0.1},
                     },
                     "patient_emotion": {
                         "type": "choice",
                         "choice": "afraid",
-                        "confidence": 0.9,
+                        "confidence": 0.94,
                         "probabilities": {"afraid": 0.9, "calm": 0.1},
                     },
                     "doctor_emotion": {
                         "type": "choice",
                         "choice": "anxious",
-                        "confidence": 0.9,
+                        "confidence": 0.95,
                         "probabilities": {"anxious": 0.9, "calm": 0.1},
                     },
                 },
@@ -108,13 +108,13 @@ def test_submit_answers():
     )
     assert res.status_code == 200
     assert res.json() == {
-        "criticality": 8,
-        "call_ambulance": True,
-        "treatment": "hospital_visit",
-        "patient_honesty": 2,
-        "patient_emotion": "afraid",
-        "doctor_emotion": "anxious",
-        "kick_out_office": False,
+        "criticality": {"score": 8, "confidence": 0.91},
+        "call_ambulance": {"noul": True, "probability": 0.6},
+        "treatment": {"choice": "hospital_visit", "confidence": 0.93},
+        "patient_honesty": {"score": 2, "confidence": 0.92},
+        "patient_emotion": {"choice": "afraid", "confidence": 0.94},
+        "doctor_emotion": {"choice": "anxious", "confidence": 0.95},
+        "kick_out_office": {"noul": False, "probability": 0.1},
     }
 
 

@@ -36,11 +36,28 @@ class SubmitAnswers(BaseModel):
     answers: list[Answer] = Field(min_length=1)
 
 
+class ScoreResult(BaseModel):
+    score: int = Field(ge=0, le=9)
+    confidence: float = Field(ge=0, le=1)
+
+
+class ChoiceResult[T: StrEnum](BaseModel):
+    choice: T
+    confidence: float = Field(ge=0, le=1)
+
+
+class NoulResult(BaseModel):
+    """Jev gives yes/no answers a yes-probability but no confidence."""
+
+    noul: bool
+    probability: float = Field(ge=0, le=1)
+
+
 class JevAssessment(BaseModel):
-    criticality: int = Field(ge=0, le=9)
-    call_ambulance: bool
-    treatment: Treatment
-    patient_honesty: int = Field(ge=0, le=9)
-    patient_emotion: Emotion
-    doctor_emotion: Emotion
-    kick_out_office: bool
+    criticality: ScoreResult
+    call_ambulance: NoulResult
+    treatment: ChoiceResult[Treatment]
+    patient_honesty: ScoreResult
+    patient_emotion: ChoiceResult[Emotion]
+    doctor_emotion: ChoiceResult[Emotion]
+    kick_out_office: NoulResult

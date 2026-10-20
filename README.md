@@ -42,7 +42,21 @@ curl -X POST localhost:8000/sessions/1/answers \
   -d '{"answers": [{"question_id": "q1", "answer": "Crushing chest pain"}]}'
 ```
 
-The response contains `criticality` and `patient_honesty` (0–9 scores), `call_ambulance` and `kick_out_office` (booleans), `treatment` and `patient_emotion`.
+Each field in the response carries Jev's certainty alongside its value:
+
+```json
+{
+  "criticality":     {"score": 8, "confidence": 0.91},
+  "call_ambulance":  {"noul": true, "probability": 0.62},
+  "treatment":       {"choice": "hospital_visit", "confidence": 0.93},
+  "patient_honesty": {"score": 2, "confidence": 0.92},
+  "patient_emotion": {"choice": "afraid", "confidence": 0.94},
+  "doctor_emotion":  {"choice": "anxious", "confidence": 0.95},
+  "kick_out_office": {"noul": false, "probability": 0.10}
+}
+```
+
+`score` fields are 0–9. `noul` fields are yes/no: Jev gives a yes-`probability` rather than a confidence, and `noul` is true when it passes the threshold set in `backend/src/backend/jev.py`.
 
 ### Tests
 
