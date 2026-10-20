@@ -1,7 +1,9 @@
-import { JevJudgementModel } from '../models/JevJudgementModel';
-import { PatientCaseModel } from '../models/PatientCaseModel';
+import { JevJudgementModel, type SpeakerRole } from '../models/JevJudgementModel';
+import {
+  PatientCaseModel,
+  type BackendQuestionDto,
+} from '../models/PatientCaseModel';
 import { PlayerSessionModel } from '../models/PlayerSessionModel';
-import type { SpeakerRole } from '../models/JevJudgementModel';
 
 export type GameStateId =
   | 'INIT_SESSION'
@@ -24,7 +26,11 @@ export interface GameStateSnapshot {
 }
 
 export type GameEvent =
-  | { readonly type: 'SESSION_INITIALIZED'; readonly playerId: string }
+  | {
+      readonly type: 'SESSION_INITIALIZED';
+      readonly playerId: string;
+      readonly questions?: readonly BackendQuestionDto[];
+    }
   | { readonly type: 'SESSION_ERROR'; readonly error: string }
   | { readonly type: 'BEGIN_CONSULTATION' }
   | { readonly type: 'SUBMIT_ANSWER'; readonly answer: string }
@@ -34,7 +40,7 @@ export type GameEvent =
       readonly judgement: JevJudgementModel;
       readonly doctorReaction: string;
     }
-  | { readonly type: 'NEXT_PATIENT' };
+  | { readonly type: 'NEXT_PATIENT'; readonly newSessionId?: string };
 
 /**
  * Contract for an individual state class in the State Pattern.
@@ -52,4 +58,3 @@ export interface IGameStateNode {
     event: GameEvent
   ): { nextState: IGameStateNode; nextSnapshot: GameStateSnapshot };
 }
-

@@ -5,7 +5,7 @@ import {
   type ReactNode,
 } from 'react';
 import { GameViewController } from '../controllers/GameViewController';
-import { DummyJevBackendService } from '../services/DummyJevBackendService';
+import { HttpJevBackendService } from '../services/HttpJevBackendService';
 import type { IJevBackendService } from '../services/IJevBackendService';
 import { GameStateMachine } from '../state/GameStateMachine';
 import { GameContext, type GameContextValue } from './gameContextInstance';
@@ -27,7 +27,7 @@ export function GameProvider({
 }: GameProviderProps) {
   const controller = useMemo(() => {
     const machine = stateMachine ?? new GameStateMachine();
-    const service = backendService ?? new DummyJevBackendService();
+    const service = backendService ?? new HttpJevBackendService();
     return new GameViewController(machine, service);
   }, [backendService, stateMachine]);
 
@@ -49,4 +49,3 @@ export function GameProvider({
     <GameContext.Provider value={contextValue}>{children}</GameContext.Provider>
   );
 }
-

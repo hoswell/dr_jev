@@ -1,19 +1,39 @@
 import { JevJudgementModel } from './JevJudgementModel';
 import { QuestionAnswerPair } from './QuestionAnswerPair';
 
-export const DEFAULT_DOCTOR_QUESTIONS: readonly string[] = [
-  '1. What brings you into the clinic today, and where does it hurt?',
-  '2. How long have you been experiencing these symptoms, and how sudden was the onset?',
-  '3. On a scale of 1 to 10, how severe is your discomfort right now?',
-  '4. Have you taken any medications, remedies, or unusual substances in the last 24 hours?',
-  '5. Is there anything else about your lifestyle or medical history you might be holding back?',
+export interface BackendQuestionDto {
+  readonly id: string;
+  readonly text: string;
+}
+
+export const DEFAULT_DOCTOR_QUESTIONS: readonly BackendQuestionDto[] = [
+  {
+    id: 'q1',
+    text: 'What brings you into the clinic today, and where does it hurt?',
+  },
+  {
+    id: 'q2',
+    text: 'How long have you been experiencing these symptoms, and how sudden was the onset?',
+  },
+  {
+    id: 'q3',
+    text: 'On a scale of 1 to 10, how severe is your discomfort right now?',
+  },
+  {
+    id: 'q4',
+    text: 'Have you taken any medications, remedies, or unusual substances in the last 24 hours?',
+  },
+  {
+    id: 'q5',
+    text: 'Is there anything else about your lifestyle or medical history you might be holding back?',
+  },
 ];
 
 export interface PatientCaseProps {
   readonly patientNumber: number;
   readonly patientId?: string;
   readonly patientName?: string;
-  readonly questions?: readonly string[];
+  readonly questions?: readonly BackendQuestionDto[];
   readonly currentQuestionIndex?: number;
   readonly recordedAnswers?: readonly QuestionAnswerPair[];
   readonly latestJudgement?: JevJudgementModel | null;
@@ -26,7 +46,7 @@ export class PatientCaseModel {
   public readonly patientNumber: number;
   public readonly patientId: string;
   public readonly patientName: string;
-  public readonly questions: readonly string[];
+  public readonly questions: readonly BackendQuestionDto[];
   public readonly currentQuestionIndex: number;
   public readonly recordedAnswers: readonly QuestionAnswerPair[];
   public readonly latestJudgement: JevJudgementModel | null;
@@ -41,11 +61,15 @@ export class PatientCaseModel {
     this.latestJudgement = props.latestJudgement ?? null;
   }
 
-  public get currentQuestionText(): string {
+  public get currentQuestion(): BackendQuestionDto {
     return (
       this.questions[this.currentQuestionIndex] ??
       this.questions[this.questions.length - 1]
     );
+  }
+
+  public get currentQuestionText(): string {
+    return `${this.currentQuestionIndex + 1}. ${this.currentQuestion.text}`;
   }
 
   public get totalQuestions(): number {
@@ -61,9 +85,23 @@ export class PatientCaseModel {
     return `Question ${current} of ${this.totalQuestions}`;
   }
 
+  public withQuestions(questions: readonly BackendQuestionDto[]): PatientCaseModel {
+    return new PatientCaseModel({
+      patientNumber: this.patientNumber,
+      patientId: this.patientId,
+      patientName: this.patientName,
+      questions: questions.length > 0 ? questions : DEFAULT_DOCTOR_QUESTIONS,
+      currentQuestionIndex: this.currentQuestionIndex,
+      recordedAnswers: this.recordedAnswers,
+      latestJudgement: this.latestJudgement,
+    });
+  }
+
   public withRecordedAnswer(answerText: string): PatientCaseModel {
+    const q = this.currentQuestion;
     const entry = new QuestionAnswerPair(
       this.currentQuestionIndex,
+      q.id,
       this.currentQuestionText,
       answerText
     );
@@ -97,4 +135,3 @@ export class PatientCaseModel {
     });
   }
 }
-

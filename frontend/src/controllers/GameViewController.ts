@@ -3,7 +3,7 @@ import { GameStateMachine } from '../state/GameStateMachine';
 import type { GameStateSnapshot } from '../state/IGameStateNode';
 
 /**
- * View Controller coordinating user actions, backend service calls, and the GameStateMachine.
+ * View Controller coordinating user actions, FastAPI backend service calls, and the GameStateMachine.
  */
 export class GameViewController {
   private readonly stateMachine: GameStateMachine;
@@ -26,18 +26,19 @@ export class GameViewController {
   };
 
   /**
-   * Requests a new playerId from the backend and initializes the game session.
+   * Calls POST /sessions and GET /questions on the backend and initializes the game session.
    */
   public async initializeSession(): Promise<void> {
     try {
-      const response = await this.backendService.requestNewPlayerId();
+      const response = await this.backendService.initializeSession();
       this.stateMachine.dispatch({
         type: 'SESSION_INITIALIZED',
-        playerId: response.playerId,
+        playerId: response.sessionId,
+        questions: response.questions,
       });
     } catch (error: unknown) {
       const message =
-        error instanceof Error ? error.message : 'Failed to initialize player';
+        error instanceof Error ? error.message : 'Failed to initialize session';
       this.stateMachine.dispatch({
         type: 'SESSION_ERROR',
         error: message,
@@ -47,20 +48,29 @@ export class GameViewController {
 
   /**
    * Advances the consultation when in a dialogue-advance state (e.g., PATIENT_ENTERING or CONSULTATION_COMPLETE).
+   * When starting a new patient, creates a fresh backend session ID.
    */
-  public advanceConsultation = (): void => {
+  public advanceConsultation = async (): Promise<void> => {
     const { stateId } = this.stateMachine.getSnapshot();
 
     if (stateId === 'PATIENT_ENTERING') {
       this.stateMachine.dispatch({ type: 'BEGIN_CONSULTATION' });
     } else if (stateId === 'CONSULTATION_COMPLETE') {
-      this.stateMachine.dispatch({ type: 'NEXT_PATIENT' });
+      try {
+        const nextSession = await this.backendService.initializeSession();
+        this.stateMachine.dispatch({
+          type: 'NEXT_PATIENT',
+          newSessionId: nextSession.sessionId,
+        });
+      } catch {
+        this.stateMachine.dispatch({ type: 'NEXT_PATIENT' });
+      }
     }
   };
 
   /**
-   * Submits the typed patient answer to the backend (including playerId) and updates the state machine
-   * with the returned playerId and JEV judgement.
+   * Submits the newly typed answer for the current question to POST /sessions/{session_id}/answers
+   * (the backend appends each submitted answer onto `store.SESSIONS[session_id]`).
    */
   public submitPatientAnswer = async (rawAnswer: string): Promise<void> => {
     const trimmed = rawAnswer.trim();
@@ -70,29 +80,38 @@ export class GameViewController {
       return;
     }
 
-    const playerId = snapshot.session.playerId;
-    const { patientId, currentQuestionIndex, currentQuestionText } =
-      snapshot.patientCase;
+    const sessionId = snapshot.session.playerId;
+    const currentQuestionId = snapshot.patientCase.currentQuestion.id;
 
     this.stateMachine.dispatch({
       type: 'SUBMIT_ANSWER',
       answer: trimmed,
     });
 
-    const result = await this.backendService.submitPatientAnswer({
-      playerId,
-      patientId,
-      questionIndex: currentQuestionIndex,
-      questionText: currentQuestionText,
-      patientAnswer: trimmed,
-    });
+    try {
+      const result = await this.backendService.submitAnswers({
+        sessionId,
+        answers: [
+          {
+            question_id: currentQuestionId,
+            answer: trimmed,
+          },
+        ],
+      });
 
-    this.stateMachine.dispatch({
-      type: 'JEV_RESPONSE_RECEIVED',
-      playerId: result.playerId,
-      judgement: result.judgement,
-      doctorReaction: result.doctorReaction,
-    });
+      this.stateMachine.dispatch({
+        type: 'JEV_RESPONSE_RECEIVED',
+        playerId: result.sessionId,
+        judgement: result.judgement,
+        doctorReaction: result.doctorReaction,
+      });
+    } catch (error: unknown) {
+      const message =
+        error instanceof Error ? error.message : 'Failed to submit answer';
+      this.stateMachine.dispatch({
+        type: 'SESSION_ERROR',
+        error: message,
+      });
+    }
   };
 }
-

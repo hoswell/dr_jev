@@ -1,60 +1,60 @@
 import {
   JevJudgementModel,
-  type JevJudgementData,
+  type BackendJevAssessmentDto,
 } from '../models/JevJudgementModel';
+import { DEFAULT_DOCTOR_QUESTIONS } from '../models/PatientCaseModel';
 import type {
   IJevBackendService,
-  InitPlayerResponseDto,
+  InitSessionResult,
   SubmitAnswerRequestDto,
   SubmitAnswerResult,
 } from './IJevBackendService';
 
-export const DUMMY_PLAYER_ID = 'player-jev-demo-001';
+export const DUMMY_PLAYER_ID = '1';
 
-export const DUMMY_JUDGEMENT_DATA: JevJudgementData = {
-  recommendedTreatment: 'Prescribe 500mg Paracetamol & 48h bed rest',
-  criticality: 'Moderate',
-  callAmbulance: false,
-  trustPatient: true,
-  isPatientLying: false,
-  confidenceScore: 87,
-  clinicalNotes:
-    'Patient symptoms appear consistent with mild viral fatigue, though minor exaggeration detected in pain reporting.',
+export const DUMMY_ASSESSMENT_DTO: BackendJevAssessmentDto = {
+  criticality: 4,
+  call_ambulance: false,
+  treatment: 'medication',
+  patient_honesty: 8,
+  patient_emotion: 'calm',
+  doctor_emotion: 'calm',
+  kick_out_office: false,
 };
 
 export const DUMMY_DOCTOR_REACTION =
   "Hmm, interesting... I've noted that down in the JEV diagnostic system.";
 
 /**
- * Dummy backend integration that always returns the same deterministic response
- * while strictly honoring the playerId request/response contract.
+ * Deterministic fallback/test implementation of IJevBackendService matching the FastAPI schemas.
  */
 export class DummyJevBackendService implements IJevBackendService {
   private readonly simulatedDelayMs: number;
 
-  constructor(simulatedDelayMs = 350) {
+  constructor(simulatedDelayMs = 200) {
     this.simulatedDelayMs = simulatedDelayMs;
   }
 
-  public async requestNewPlayerId(): Promise<InitPlayerResponseDto> {
+  public async initializeSession(): Promise<InitSessionResult> {
     await this.delay();
     return {
-      playerId: DUMMY_PLAYER_ID,
+      sessionId: DUMMY_PLAYER_ID,
+      questions: DEFAULT_DOCTOR_QUESTIONS,
     };
   }
 
-  public async submitPatientAnswer(
+  public async submitAnswers(
     request: SubmitAnswerRequestDto
   ): Promise<SubmitAnswerResult> {
-    if (!request.playerId) {
-      throw new Error('playerId is required on every backend request.');
+    if (!request.sessionId) {
+      throw new Error('sessionId is required on every backend request.');
     }
 
     await this.delay();
 
     return {
-      playerId: request.playerId,
-      judgement: new JevJudgementModel(DUMMY_JUDGEMENT_DATA),
+      sessionId: request.sessionId,
+      judgement: new JevJudgementModel(DUMMY_ASSESSMENT_DTO),
       doctorReaction: DUMMY_DOCTOR_REACTION,
     };
   }
@@ -66,4 +66,3 @@ export class DummyJevBackendService implements IJevBackendService {
     return new Promise((resolve) => setTimeout(resolve, this.simulatedDelayMs));
   }
 }
-

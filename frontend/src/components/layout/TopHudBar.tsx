@@ -9,7 +9,7 @@ export function TopHudBar() {
         <span className="cross-icon">✚</span> DR. JEV CLINICAL DEMO
       </div>
       <div className="session-pill">
-        Player ID: <strong>{snapshot.session.playerId ?? 'Requesting...'}</strong>
+        Session ID: <strong>{snapshot.session.playerId ?? 'Requesting...'}</strong>
       </div>
     </header>
   );

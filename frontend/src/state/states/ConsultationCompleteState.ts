@@ -22,7 +22,11 @@ export class ConsultationCompleteState implements IGameStateNode {
       const nextPatientNumber = snapshot.patientCase.patientNumber + 1;
       const freshPatientCase = new PatientCaseModel({
         patientNumber: nextPatientNumber,
+        questions: snapshot.patientCase.questions,
       });
+      const updatedSession = event.newSessionId
+        ? snapshot.session.withPlayerId(event.newSessionId)
+        : snapshot.session;
 
       return {
         nextState,
@@ -33,6 +37,7 @@ export class ConsultationCompleteState implements IGameStateNode {
           canTypeAnswer: nextState.canTypeAnswer,
           canAdvanceDialogue: nextState.canAdvanceDialogue,
           advanceButtonLabel: nextState.advanceButtonLabel,
+          session: updatedSession,
           patientCase: freshPatientCase,
           speaker: 'Dr. Jev',
           dialogueText: `Alright, let's bring in ${freshPatientCase.patientName}! Come on in from the waiting room.`,
@@ -43,4 +48,3 @@ export class ConsultationCompleteState implements IGameStateNode {
     return { nextState: this, nextSnapshot: snapshot };
   }
 }
-

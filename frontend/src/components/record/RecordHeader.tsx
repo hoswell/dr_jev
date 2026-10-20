@@ -3,7 +3,7 @@ import { useGame } from '../../hooks/useGame';
 export function RecordHeader() {
   const { snapshot } = useGame();
   const { patientName, patientId } = snapshot.patientCase;
-  const playerId = snapshot.session.playerId;
+  const sessionId = snapshot.session.playerId;
 
   return (
     <div className="record-header">
@@ -16,8 +16,8 @@ export function RecordHeader() {
           <strong>Patient:</strong> {patientName} ({patientId})
         </div>
         <div>
-          <strong>Player ID:</strong>{' '}
-          <code>{playerId ?? 'Initializing...'}</code>
+          <strong>Session ID:</strong>{' '}
+          <code>{sessionId ?? 'Initializing...'}</code>
         </div>
       </div>
     </div>

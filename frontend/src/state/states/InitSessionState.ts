@@ -19,6 +19,9 @@ export class InitSessionState implements IGameStateNode {
     if (event.type === 'SESSION_INITIALIZED') {
       const nextState = new PatientEnteringState();
       const updatedSession = snapshot.session.withPlayerId(event.playerId);
+      const updatedPatientCase = event.questions
+        ? snapshot.patientCase.withQuestions(event.questions)
+        : snapshot.patientCase;
 
       return {
         nextState,
@@ -30,8 +33,9 @@ export class InitSessionState implements IGameStateNode {
           canAdvanceDialogue: nextState.canAdvanceDialogue,
           advanceButtonLabel: nextState.advanceButtonLabel,
           session: updatedSession,
+          patientCase: updatedPatientCase,
           speaker: 'Dr. Jev',
-          dialogueText: `Welcome to St. Jev's Hospital! (Session ID: ${event.playerId}). Send in the first patient!`,
+          dialogueText: `Welcome to St. Jev's Hospital! (Session #${event.playerId}). Send in the first patient!`,
           error: null,
         },
       };
@@ -51,4 +55,3 @@ export class InitSessionState implements IGameStateNode {
     return { nextState: this, nextSnapshot: snapshot };
   }
 }
-

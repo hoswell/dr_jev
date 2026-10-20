@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { JevJudgementModel } from '../../models/JevJudgementModel';
 import {
+  DUMMY_ASSESSMENT_DTO,
   DUMMY_DOCTOR_REACTION,
-  DUMMY_JUDGEMENT_DATA,
   DUMMY_PLAYER_ID,
 } from '../../services/DummyJevBackendService';
 import { GameStateMachine } from '../GameStateMachine';
@@ -35,7 +35,7 @@ describe('GameStateMachine & State Pattern nodes', () => {
     expect(machine.getSnapshot().stateId).toBe('AWAITING_PATIENT_INPUT');
     expect(machine.getSnapshot().canTypeAnswer).toBe(true);
 
-    const dummyJudgement = new JevJudgementModel(DUMMY_JUDGEMENT_DATA);
+    const dummyJudgement = new JevJudgementModel(DUMMY_ASSESSMENT_DTO);
 
     for (let i = 0; i < 5; i += 1) {
       expect(machine.getSnapshot().patientCase.currentQuestionIndex).toBe(i);
@@ -65,15 +65,18 @@ describe('GameStateMachine & State Pattern nodes', () => {
     const finalSnap = machine.getSnapshot();
     expect(finalSnap.patientCase.recordedAnswers).toHaveLength(5);
     expect(finalSnap.patientCase.latestJudgement?.recommendedTreatment).toBe(
-      DUMMY_JUDGEMENT_DATA.recommendedTreatment
+      'Prescribe Medication'
     );
 
     // Calling next patient resets the case for Patient #2
-    const nextPatientSnap = machine.dispatch({ type: 'NEXT_PATIENT' });
+    const nextPatientSnap = machine.dispatch({
+      type: 'NEXT_PATIENT',
+      newSessionId: '2',
+    });
     expect(nextPatientSnap.stateId).toBe('PATIENT_ENTERING');
+    expect(nextPatientSnap.session.playerId).toBe('2');
     expect(nextPatientSnap.patientCase.patientNumber).toBe(2);
     expect(nextPatientSnap.patientCase.recordedAnswers).toHaveLength(0);
     expect(nextPatientSnap.patientCase.latestJudgement).toBeNull();
   });
 });
-

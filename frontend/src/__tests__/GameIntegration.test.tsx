@@ -3,13 +3,12 @@ import { describe, expect, it } from 'vitest';
 import { GameViewport } from '../components/layout/GameViewport';
 import { GameProvider } from '../context/GameContext';
 import {
-  DUMMY_JUDGEMENT_DATA,
   DUMMY_PLAYER_ID,
   DummyJevBackendService,
 } from '../services/DummyJevBackendService';
 
 describe('Dr. Jev UI Integration', () => {
-  it('initializes with playerId, displays questions, accepts manual answers, and updates the right-hand patient record', async () => {
+  it('initializes with session_id, displays questions, accepts manual answers, and updates the right-hand patient record', async () => {
     const fastDummyService = new DummyJevBackendService(0);
 
     render(
@@ -18,7 +17,7 @@ describe('Dr. Jev UI Integration', () => {
       </GameProvider>
     );
 
-    // Wait for playerId initialization
+    // Wait for sessionId initialization
     await waitFor(() => {
       expect(screen.getAllByText(DUMMY_PLAYER_ID).length).toBeGreaterThan(0);
     });
@@ -44,15 +43,17 @@ describe('Dr. Jev UI Integration', () => {
 
     // Verify right-hand Patient Record Panel updates with JEV judgements & recorded answer
     await waitFor(() => {
-      expect(
-        screen.getByText(DUMMY_JUDGEMENT_DATA.recommendedTreatment)
-      ).toBeDefined();
+      expect(screen.getByText('Prescribe Medication')).toBeDefined();
     });
 
     expect(screen.getByText(/Sharp pain in my left knee/i)).toBeDefined();
-    expect(screen.getByText('Moderate')).toBeDefined();
-    expect(screen.getByText('Trusted')).toBeDefined();
-    expect(screen.getByText('Truthful')).toBeDefined();
+    expect(
+      screen.getByText('4/9 — Moderate, should see a doctor this week')
+    ).toBeDefined();
+    expect(
+      screen.getByText('8/9 — Very honest and forthcoming')
+    ).toBeDefined();
+    expect(screen.getAllByText('Calm').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByText('Keep in Clinic')).toBeDefined();
   });
 });
-

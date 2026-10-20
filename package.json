@@ -1,0 +1,13 @@
+{
+  "name": "dr_jev",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "pnpm run dev:backend & pnpm run dev:frontend & wait",
+    "start": "pnpm run dev",
+    "dev:frontend": "pnpm --dir frontend dev",
+    "dev:backend": "cd backend && uv run backend",
+    "build": "pnpm --dir frontend build",
+    "test": "pnpm --dir frontend test"
+  }
+}

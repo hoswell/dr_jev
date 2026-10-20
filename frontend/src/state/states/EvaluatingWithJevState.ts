@@ -38,7 +38,8 @@ export class EvaluatingWithJevState implements IGameStateNode {
             session: updatedSession,
             patientCase: completedPatientCase,
             speaker: 'Dr. Jev',
-            dialogueText: `${event.doctorReaction} All 5 questions complete! Review the final JEV assessment on the patient chart to the right.`,
+            dialogueText: `${event.doctorReaction} All ${snapshot.patientCase.totalQuestions} questions complete! Review the final JEV assessment on the patient chart to the right.`,
+            error: null,
           },
         };
       }
@@ -62,6 +63,25 @@ export class EvaluatingWithJevState implements IGameStateNode {
           patientCase: advancedPatientCase,
           speaker: 'Dr. Jev',
           dialogueText: advancedPatientCase.currentQuestionText,
+          error: null,
+        },
+      };
+    }
+
+    if (event.type === 'SESSION_ERROR') {
+      const nextState = new AwaitingPatientInputState();
+      return {
+        nextState,
+        nextSnapshot: {
+          ...snapshot,
+          stateId: nextState.id,
+          stateLabel: nextState.label,
+          canTypeAnswer: nextState.canTypeAnswer,
+          canAdvanceDialogue: nextState.canAdvanceDialogue,
+          advanceButtonLabel: nextState.advanceButtonLabel,
+          speaker: 'System',
+          dialogueText: `Backend error: ${event.error}. Please try submitting again.`,
+          error: event.error,
         },
       };
     }
@@ -69,4 +89,3 @@ export class EvaluatingWithJevState implements IGameStateNode {
     return { nextState: this, nextSnapshot: snapshot };
   }
 }
-

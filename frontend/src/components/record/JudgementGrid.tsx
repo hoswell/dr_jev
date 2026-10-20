@@ -21,12 +21,12 @@ export function JudgementGrid() {
         </span>
       </div>
 
-      <div className="judgement-card">
-        <span className="judgement-label">Criticality</span>
+      <div className="judgement-card full-width">
+        <span className="judgement-label">Criticality (0–9)</span>
         <span
           className={`judgement-pill criticality-${judgement.criticality.toLowerCase()}`}
         >
-          {judgement.criticality}
+          {judgement.criticalityDisplay}
         </span>
       </div>
 
@@ -42,32 +42,47 @@ export function JudgementGrid() {
       </div>
 
       <div className="judgement-card">
-        <span className="judgement-label">Trust Patient?</span>
+        <span className="judgement-label">Kick Out of Office?</span>
         <span
           className={`judgement-pill ${
-            judgement.trustPatient ? 'pill-safe' : 'pill-warning'
+            judgement.kickOutOffice ? 'pill-danger' : 'pill-safe'
           }`}
         >
-          {judgement.formattedTrustStatus}
+          {judgement.formattedKickOutStatus}
         </span>
       </div>
 
       <div className="judgement-card">
-        <span className="judgement-label">Patient Lying?</span>
+        <span className="judgement-label">Patient Emotion</span>
         <span
           className={`judgement-pill ${
-            judgement.isPatientLying ? 'pill-danger' : 'pill-safe'
+            judgement.patientEmotion === 'calm' ? 'pill-safe' : 'pill-warning'
           }`}
         >
-          {judgement.formattedLieDetection}
+          {judgement.formattedEmotion}
+        </span>
+      </div>
+
+      <div className="judgement-card">
+        <span className="judgement-label">Doctor Emotion</span>
+        <span
+          className={`judgement-pill ${
+            judgement.doctorEmotion === 'calm' ? 'pill-safe' : 'pill-warning'
+          }`}
+        >
+          {judgement.formattedDoctorEmotion}
         </span>
       </div>
 
       <div className="judgement-card full-width">
-        <span className="judgement-label">
-          JEV Assessment Notes (Confidence: {judgement.confidenceScore}%)
+        <span className="judgement-label">Patient Honesty (0–9)</span>
+        <span
+          className={`judgement-pill ${
+            judgement.trustPatient ? 'pill-safe' : 'pill-danger'
+          }`}
+        >
+          {judgement.formattedHonestyStatus}
         </span>
-        <p className="judgement-notes">{judgement.clinicalNotes}</p>
       </div>
     </div>
   );
