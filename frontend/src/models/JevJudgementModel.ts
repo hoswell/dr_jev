@@ -2,7 +2,12 @@ export type CriticalityLevel = 'Low' | 'Moderate' | 'High' | 'Critical';
 
 export type SpeakerRole = 'Dr. Jev' | 'Patient' | 'System';
 
-export type TreatmentType = 'rest' | 'medication' | 'hospital_visit' | 'surgery';
+export type TreatmentType =
+  | 'none'
+  | 'rest'
+  | 'medication'
+  | 'hospital_visit'
+  | 'surgery';
 
 export type EmotionType = 'calm' | 'anxious' | 'angry' | 'sad' | 'afraid';
 
@@ -37,6 +42,7 @@ export interface BackendJevAssessmentDto {
 }
 
 const TREATMENT_LABELS: Record<TreatmentType, string> = {
+  none: 'No Treatment Required',
   rest: 'Rest & Recovery',
   medication: 'Prescribe Medication',
   hospital_visit: 'Hospital Visit / Admission',
