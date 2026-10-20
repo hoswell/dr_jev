@@ -29,7 +29,7 @@ export function PatientAnswerForm() {
         className="vn-submit-btn"
         disabled={!inputValue.trim()}
       >
-        Send to JEV
+        Send to Dr. Jev
       </button>
     </form>
   );

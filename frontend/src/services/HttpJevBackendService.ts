@@ -107,12 +107,12 @@ export class HttpJevBackendService implements IJevBackendService {
 
   private buildDoctorReaction(judgement: JevJudgementModel): string {
     if (judgement.kickOutOffice) {
-      return "Hold on—JEV flags hostility and low honesty! I'm going to have to ask you to leave the clinic!";
+      return "Hold on—Dr. Jev flags hostility and disruption! I order you to leave my office right now! This consultation is terminated.";
     }
     if (judgement.callAmbulance) {
       return `Criticality is ${judgement.criticalityScore}/9! We need an ambulance for ${judgement.recommendedTreatment.toLowerCase()} immediately!`;
     }
-    return `JEV updated the chart: ${judgement.recommendedTreatment} (Criticality ${judgement.criticalityScore}/9, Emotion: ${judgement.formattedEmotion}).`;
+    return `Dr. Jev updated the chart: ${judgement.recommendedTreatment} (Criticality ${judgement.criticalityScore}/9, Emotion: ${judgement.formattedEmotion}).`;
   }
 }
 

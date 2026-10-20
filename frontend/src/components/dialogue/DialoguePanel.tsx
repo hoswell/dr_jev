@@ -26,7 +26,7 @@ export function DialoguePanel() {
           </div>
         ) : (
           <div className="vn-waiting-indicator">
-            <span className="vn-spinner" /> Processing with JEV backend...
+            <span className="vn-spinner" /> Processing with Dr. Jev...
           </div>
         )}
       </div>

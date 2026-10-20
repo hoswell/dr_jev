@@ -9,7 +9,7 @@ export function RecordHeader() {
     <div className="record-header">
       <div className="record-title-row">
         <h2>PATIENT RECORD</h2>
-        <span className="jev-badge">JEV LIVE</span>
+        <span className="jev-badge">DR. JEV LIVE</span>
       </div>
       <div className="record-meta">
         <div>

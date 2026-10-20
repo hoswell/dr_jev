@@ -33,7 +33,7 @@ export class AwaitingPatientInputState implements IGameStateNode {
           advanceButtonLabel: nextState.advanceButtonLabel,
           patientCase: updatedPatientCase,
           speaker: 'Patient',
-          dialogueText: `"${event.answer}" — (Sending response to JEV...)`,
+          dialogueText: `"${event.answer}" — (Sending response to Dr. Jev...)`,
         },
       };
     }

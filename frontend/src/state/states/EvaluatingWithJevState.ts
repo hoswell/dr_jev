@@ -8,7 +8,7 @@ import { ConsultationCompleteState } from './ConsultationCompleteState';
 
 export class EvaluatingWithJevState implements IGameStateNode {
   public readonly id = 'EVALUATING_WITH_JEV' as const;
-  public readonly label = 'JEV Evaluating Answer';
+  public readonly label = 'Dr. Jev Evaluating Answer';
   public readonly canTypeAnswer = false;
   public readonly canAdvanceDialogue = false;
   public readonly advanceButtonLabel = null;
@@ -40,7 +40,7 @@ export class EvaluatingWithJevState implements IGameStateNode {
             patientCase: completedPatientCase,
             speaker: 'Dr. Jev',
             dialogueText:
-              "Hold on—JEV flags extreme hostility or disruption! I order you to leave my office right now! This consultation is terminated.",
+              "Hold on—Dr. Jev flags extreme hostility or disruption! I order you to leave my office right now! This consultation is terminated.",
             error: null,
           },
         };
@@ -63,7 +63,7 @@ export class EvaluatingWithJevState implements IGameStateNode {
             session: updatedSession,
             patientCase: completedPatientCase,
             speaker: 'Dr. Jev',
-            dialogueText: `${event.doctorReaction} All ${snapshot.patientCase.totalQuestions} questions complete! Review the final JEV assessment on the patient chart to the right.`,
+            dialogueText: `${event.doctorReaction} All ${snapshot.patientCase.totalQuestions} questions complete! Review the final Dr. Jev assessment on the patient chart to the right.`,
             error: null,
           },
         };

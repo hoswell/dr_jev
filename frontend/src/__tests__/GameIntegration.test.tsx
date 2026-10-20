@@ -38,7 +38,7 @@ describe('Dr. Jev UI Integration', () => {
     fireEvent.change(input, {
       target: { value: 'Sharp pain in my left knee' },
     });
-    const sendBtn = screen.getByRole('button', { name: /Send to JEV/i });
+    const sendBtn = screen.getByRole('button', { name: /Send to Dr\. Jev/i });
     fireEvent.click(sendBtn);
 
     // Verify right-hand Patient Record Panel updates with JEV judgements & recorded answer

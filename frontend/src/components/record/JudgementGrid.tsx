@@ -7,7 +7,7 @@ export function JudgementGrid() {
   if (!judgement) {
     return (
       <div className="record-empty">
-        Awaiting first patient answer to compute JEV judgements...
+        Awaiting first patient answer to compute Dr. Jev's judgements...
       </div>
     );
   }

@@ -23,7 +23,7 @@ export const DUMMY_ASSESSMENT_DTO: BackendJevAssessmentDto = {
 };
 
 export const DUMMY_DOCTOR_REACTION =
-  "Hmm, interesting... I've noted that down in the JEV diagnostic system.";
+  "Hmm, interesting... I've noted that down in Dr. Jev's diagnostic system.";
 
 /**
  * Deterministic fallback/test implementation of IJevBackendService matching the FastAPI schemas.

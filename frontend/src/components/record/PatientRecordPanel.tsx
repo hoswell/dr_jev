@@ -9,7 +9,7 @@ export function PatientRecordPanel() {
       <RecordHeader />
 
       <section className="record-section">
-        <h3>JEV Diagnostic Judgements</h3>
+        <h3>Dr. Jev's Diagnostic Judgements</h3>
         <JudgementGrid />
       </section>
 
