@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from typesafe_sdk import AsyncTypeSafeClient, Choice, Noul, Score
 
 from backend.questions import QUESTIONS_BY_ID
-from backend.schemas import Answer, JevAssessment, PatientEmotion, Treatment
+from backend.schemas import Answer, Emotion, JevAssessment, Treatment
 
 load_dotenv()  # TYPESAFE_API_KEY
 
@@ -17,6 +17,14 @@ MODEL = "jev-latest"
 # probability of "yes" above which a noul counts as true; ambulance errs on the side of calling
 AMBULANCE_THRESHOLD = 0.5
 KICK_OUT_THRESHOLD = 0.5
+
+EMOTION_CRITERIA = {
+    Emotion.CALM: "Relaxed, composed, unbothered",
+    Emotion.ANXIOUS: "Worried, nervous, on edge",
+    Emotion.ANGRY: "Irritated, hostile, aggressive",
+    Emotion.SAD: "Low, upset, tearful",
+    Emotion.AFRAID: "Frightened, panicking",
+}
 
 QUESTIONS = {
     "criticality": Score(
@@ -63,13 +71,13 @@ QUESTIONS = {
     ),
     "patient_emotion": Choice(
         instructions="What is the patient's dominant emotion?",
-        criteria={
-            PatientEmotion.CALM: "Relaxed, composed, unbothered",
-            PatientEmotion.ANXIOUS: "Worried, nervous, on edge",
-            PatientEmotion.ANGRY: "Irritated, hostile, aggressive",
-            PatientEmotion.SAD: "Low, upset, tearful",
-            PatientEmotion.AFRAID: "Frightened, panicking",
-        },
+        criteria=EMOTION_CRITERIA,
+    ),
+    "doctor_emotion": Choice(
+        instructions=(
+            "What is the doctor's dominant emotion as they listen to the patient's answers?"
+        ),
+        criteria=EMOTION_CRITERIA,
     ),
     "kick_out_office": Noul(
         instructions=(
@@ -123,7 +131,8 @@ async def ask_jev(answers: list[Answer]) -> JevAssessment:
         call_ambulance=response.nouls["call_ambulance"].noul >= AMBULANCE_THRESHOLD,
         treatment=Treatment(response.choices["treatment"].choice),
         patient_honesty=round(response.scores["patient_honesty"].score),
-        patient_emotion=PatientEmotion(response.choices["patient_emotion"].choice),
+        patient_emotion=Emotion(response.choices["patient_emotion"].choice),
+        doctor_emotion=Emotion(response.choices["doctor_emotion"].choice),
         kick_out_office=response.nouls["kick_out_office"].noul >= KICK_OUT_THRESHOLD,
     )
     logger.info(

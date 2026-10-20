@@ -10,7 +10,7 @@ class Treatment(StrEnum):
     SURGERY = "surgery"
 
 
-class PatientEmotion(StrEnum):
+class Emotion(StrEnum):
     CALM = "calm"
     ANXIOUS = "anxious"
     ANGRY = "angry"
@@ -41,5 +41,6 @@ class JevAssessment(BaseModel):
     call_ambulance: bool
     treatment: Treatment
     patient_honesty: int = Field(ge=0, le=9)
-    patient_emotion: PatientEmotion
+    patient_emotion: Emotion
+    doctor_emotion: Emotion
     kick_out_office: bool

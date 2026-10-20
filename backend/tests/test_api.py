@@ -27,6 +27,7 @@ class FakeClient:
             "treatment",
             "patient_honesty",
             "patient_emotion",
+            "doctor_emotion",
             "kick_out_office",
         }
         self.states.append(state)
@@ -62,6 +63,12 @@ class FakeClient:
                         "choice": "afraid",
                         "confidence": 0.9,
                         "probabilities": {"afraid": 0.9, "calm": 0.1},
+                    },
+                    "doctor_emotion": {
+                        "type": "choice",
+                        "choice": "anxious",
+                        "confidence": 0.9,
+                        "probabilities": {"anxious": 0.9, "calm": 0.1},
                     },
                 },
             }
@@ -106,6 +113,7 @@ def test_submit_answers():
         "treatment": "hospital_visit",
         "patient_honesty": 2,
         "patient_emotion": "afraid",
+        "doctor_emotion": "anxious",
         "kick_out_office": False,
     }
 
