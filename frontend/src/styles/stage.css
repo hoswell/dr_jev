@@ -56,6 +56,21 @@
   animation: slideInFromRight 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+.patient-kicked-out {
+  animation: patientKickOutFade 2s cubic-bezier(0.4, 0, 0.2, 1) 1.5s forwards;
+}
+
+@keyframes patientKickOutFade {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+}
+
 @keyframes slideInFromRight {
   0% {
     transform: translateX(420px);

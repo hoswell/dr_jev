@@ -48,7 +48,7 @@ describe('Dr. Jev UI Integration', () => {
 
     expect(screen.getByText(/Sharp pain in my left knee/i)).toBeDefined();
     expect(
-      screen.getByText('4/9 — Moderate, should see a doctor this week')
+      screen.getByText('4/9 — Moderate, follow-up within a week')
     ).toBeDefined();
     expect(
       screen.getByText('8/9 — Very honest and forthcoming')

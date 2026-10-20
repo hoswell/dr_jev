@@ -79,4 +79,39 @@ describe('GameStateMachine & State Pattern nodes', () => {
     expect(nextPatientSnap.patientCase.recordedAnswers).toHaveLength(0);
     expect(nextPatientSnap.patientCase.latestJudgement).toBeNull();
   });
+
+  it('immediately stops questions and terminates consultation when kickOutOffice is true', () => {
+    const machine = new GameStateMachine();
+    machine.dispatch({
+      type: 'SESSION_INITIALIZED',
+      playerId: DUMMY_PLAYER_ID,
+    });
+    machine.dispatch({ type: 'BEGIN_CONSULTATION' });
+
+    // Submit answer on question 1
+    machine.dispatch({
+      type: 'SUBMIT_ANSWER',
+      answer: 'I hate doctors and I refuse to cooperate!',
+    });
+
+    const kickOutJudgement = new JevJudgementModel({
+      ...DUMMY_ASSESSMENT_DTO,
+      kick_out_office: { noul: true, probability: 0.99 },
+    });
+
+    const snap = machine.dispatch({
+      type: 'JEV_RESPONSE_RECEIVED',
+      playerId: DUMMY_PLAYER_ID,
+      judgement: kickOutJudgement,
+      doctorReaction: 'Hostility detected!',
+    });
+
+    // Should immediately transition to CONSULTATION_COMPLETE on question 1
+    expect(snap.stateId).toBe('CONSULTATION_COMPLETE');
+    expect(snap.canTypeAnswer).toBe(false);
+    expect(snap.canAdvanceDialogue).toBe(true);
+    expect(snap.advanceButtonLabel).toBe('Call Next Patient →');
+    expect(snap.dialogueText).toContain('order you to leave');
+    expect(snap.patientCase.latestJudgement?.kickOutOffice).toBe(true);
+  });
 });

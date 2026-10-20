@@ -20,6 +20,31 @@ export class EvaluatingWithJevState implements IGameStateNode {
     if (event.type === 'JEV_RESPONSE_RECEIVED') {
       const updatedSession = snapshot.session.withPlayerId(event.playerId);
       const isFinalQuestion = snapshot.patientCase.isLastQuestion;
+      const isKickedOut = event.judgement.kickOutOffice;
+
+      if (isKickedOut) {
+        const nextState = new ConsultationCompleteState();
+        const completedPatientCase =
+          snapshot.patientCase.withJudgementAndAdvance(event.judgement, false);
+
+        return {
+          nextState,
+          nextSnapshot: {
+            ...snapshot,
+            stateId: nextState.id,
+            stateLabel: nextState.label,
+            canTypeAnswer: nextState.canTypeAnswer,
+            canAdvanceDialogue: nextState.canAdvanceDialogue,
+            advanceButtonLabel: nextState.advanceButtonLabel,
+            session: updatedSession,
+            patientCase: completedPatientCase,
+            speaker: 'Dr. Jev',
+            dialogueText:
+              "Hold on—JEV flags extreme hostility or disruption! I order you to leave my office right now! This consultation is terminated.",
+            error: null,
+          },
+        };
+      }
 
       if (isFinalQuestion) {
         const nextState = new ConsultationCompleteState();
