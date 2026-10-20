@@ -20,8 +20,13 @@ export class ConsultationCompleteState implements IGameStateNode {
     if (event.type === 'NEXT_PATIENT') {
       const nextState = new PatientEnteringState();
       const nextPatientNumber = snapshot.patientCase.patientNumber + 1;
+      let nextSprite = Math.floor(Math.random() * 20) + 1;
+      if (nextSprite === snapshot.patientCase.spriteIndex) {
+        nextSprite = (nextSprite % 20) + 1;
+      }
       const freshPatientCase = new PatientCaseModel({
         patientNumber: nextPatientNumber,
+        spriteIndex: nextSprite,
         questions: snapshot.patientCase.questions,
       });
       const updatedSession = event.newSessionId

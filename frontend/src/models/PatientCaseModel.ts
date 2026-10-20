@@ -33,6 +33,7 @@ export interface PatientCaseProps {
   readonly patientNumber: number;
   readonly patientId?: string;
   readonly patientName?: string;
+  readonly spriteIndex?: number;
   readonly questions?: readonly BackendQuestionDto[];
   readonly currentQuestionIndex?: number;
   readonly recordedAnswers?: readonly QuestionAnswerPair[];
@@ -46,6 +47,7 @@ export class PatientCaseModel {
   public readonly patientNumber: number;
   public readonly patientId: string;
   public readonly patientName: string;
+  public readonly spriteIndex: number;
   public readonly questions: readonly BackendQuestionDto[];
   public readonly currentQuestionIndex: number;
   public readonly recordedAnswers: readonly QuestionAnswerPair[];
@@ -55,6 +57,8 @@ export class PatientCaseModel {
     this.patientNumber = props.patientNumber;
     this.patientId = props.patientId ?? `patient-00${props.patientNumber}`;
     this.patientName = props.patientName ?? `Patient #${props.patientNumber}`;
+    this.spriteIndex =
+      props.spriteIndex ?? Math.floor(Math.random() * 20) + 1;
     this.questions = props.questions ?? DEFAULT_DOCTOR_QUESTIONS;
     this.currentQuestionIndex = props.currentQuestionIndex ?? 0;
     this.recordedAnswers = props.recordedAnswers ?? [];
@@ -90,6 +94,7 @@ export class PatientCaseModel {
       patientNumber: this.patientNumber,
       patientId: this.patientId,
       patientName: this.patientName,
+      spriteIndex: this.spriteIndex,
       questions: questions.length > 0 ? questions : DEFAULT_DOCTOR_QUESTIONS,
       currentQuestionIndex: this.currentQuestionIndex,
       recordedAnswers: this.recordedAnswers,
@@ -109,6 +114,7 @@ export class PatientCaseModel {
       patientNumber: this.patientNumber,
       patientId: this.patientId,
       patientName: this.patientName,
+      spriteIndex: this.spriteIndex,
       questions: this.questions,
       currentQuestionIndex: this.currentQuestionIndex,
       recordedAnswers: [...this.recordedAnswers, entry],
@@ -128,6 +134,7 @@ export class PatientCaseModel {
       patientNumber: this.patientNumber,
       patientId: this.patientId,
       patientName: this.patientName,
+      spriteIndex: this.spriteIndex,
       questions: this.questions,
       currentQuestionIndex: nextIndex,
       recordedAnswers: this.recordedAnswers,

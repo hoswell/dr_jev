@@ -36,7 +36,46 @@ describe('HttpJevBackendService', () => {
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 
-  it('calls POST /api/sessions/{session_id}/answers and maps JevAssessment into JevJudgementModel', async () => {
+  it('calls POST /api/sessions/{session_id}/answers and maps updated nested JevAssessment schema into JevJudgementModel', async () => {
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: true,
+      json: () =>
+        Promise.resolve({
+          criticality: { score: 9, confidence: 0.93 },
+          call_ambulance: { noul: true, probability: 0.94 },
+          treatment: { choice: 'hospital_visit', confidence: 1.0 },
+          patient_honesty: { score: 8, confidence: 0.96 },
+          patient_emotion: { choice: 'afraid', confidence: 0.4 },
+          doctor_emotion: { choice: 'anxious', confidence: 0.82 },
+          kick_out_office: { noul: false, probability: 0.01 },
+        }),
+    });
+
+    vi.stubGlobal('fetch', fetchMock);
+
+    const service = new HttpJevBackendService('/api');
+    const res = await service.submitAnswers({
+      sessionId: '42',
+      answers: [{ question_id: 'q1', answer: 'Severe chest pain!' }],
+    });
+
+    expect(res.sessionId).toBe('42');
+    expect(res.judgement.criticalityScore).toBe(9);
+    expect(res.judgement.criticalityConfidence).toBe(0.93);
+    expect(res.judgement.criticalityConfidenceDisplay).toBe('93% conf');
+    expect(res.judgement.callAmbulance).toBe(true);
+    expect(res.judgement.callAmbulanceProbability).toBe(0.94);
+    expect(res.judgement.ambulanceProbabilityDisplay).toBe('94% prob');
+    expect(res.judgement.recommendedTreatment).toBe('Hospital Visit / Admission');
+    expect(res.judgement.treatmentConfidence).toBe(1.0);
+    expect(res.judgement.patientHonestyScore).toBe(8);
+    expect(res.judgement.patientHonestyConfidence).toBe(0.96);
+    expect(res.judgement.formattedEmotion).toBe('Afraid');
+    expect(res.judgement.formattedDoctorEmotion).toBe('Anxious');
+    expect(res.judgement.kickOutOffice).toBe(false);
+  });
+
+  it('calls POST /api/sessions/{session_id}/answers and maps legacy flat JevAssessment into JevJudgementModel', async () => {
     const fetchMock = vi.fn().mockResolvedValue({
       ok: true,
       json: () =>
