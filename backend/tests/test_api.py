@@ -64,7 +64,7 @@ class FakeClient:
                         "type": "choice",
                         "choice": "Get checked in the emergency room",
                         "confidence": 0.93,
-                        "probabilities": {"Get checked in the emergency room": 0.9, "Rest and recover (cozy-mode bonus)": 0.1},
+                        "probabilities": {"Get checked in the emergency room": 0.9, "Rest and recover": 0.1},
                     },
                     "patient_emotion": {
                         "type": "choice",

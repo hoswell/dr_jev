@@ -13,7 +13,7 @@
   },
   {
     "id": "tx_004",
-    "label": "Get checked today"
+    "label": "Get evaluated by a doctor today"
   },
   {
     "id": "tx_005",
@@ -29,23 +29,23 @@
   },
   {
     "id": "tx_008",
-    "label": "Get help during a crisis"
+    "label": "Contact crisis support services"
   },
   {
     "id": "tx_009",
-    "label": "See if a hospital stay is needed"
+    "label": "Evaluate for hospital admission"
   },
   {
     "id": "tx_010",
-    "label": "See if intensive hospital care is needed"
+    "label": "Evaluate for intensive care admission"
   },
   {
     "id": "tx_011",
-    "label": "Stay at the hospital for close watching"
+    "label": "Admit to the hospital for observation"
   },
   {
     "id": "tx_012",
-    "label": "Get a specialist visit soon"
+    "label": "Schedule an urgent specialist consultation"
   },
   {
     "id": "tx_013",
@@ -53,970 +53,970 @@
   },
   {
     "id": "tx_014",
-    "label": "Plan a regular doctor visit (detective mode: on)"
+    "label": "Schedule a routine doctor visit"
   },
   {
     "id": "tx_015",
-    "label": "Talk with a doctor by video or phone (assemble your care team!)"
+    "label": "Schedule a video or phone consultation"
   },
   {
     "id": "tx_016",
-    "label": "Follow up with your doctor (detective mode: on)"
+    "label": "Follow up with your doctor"
   },
   {
     "id": "tx_017",
-    "label": "Ask to see a specialist (assemble your care team!)"
+    "label": "Refer to an outpatient specialist"
   },
   {
     "id": "tx_018",
-    "label": "Talk with a nurse about what to do (assemble your care team!)"
+    "label": "Consult with a triage nurse"
   },
   {
     "id": "tx_019",
-    "label": "Talk with a pharmacist about medicines (doctor-approved power-up)"
+    "label": "Consult a pharmacist about your medications"
   },
   {
     "id": "tx_020",
-    "label": "Follow up with a care helper (detective mode: on)"
+    "label": "Follow up with a care coordinator"
   },
   {
     "id": "tx_021",
-    "label": "Get a health check at home (detective mode: on)"
+    "label": "Arrange a home health visit"
   },
   {
     "id": "tx_022",
-    "label": "Get help from a community health team (assemble your care team!)"
+    "label": "Connect with a community health team"
   },
   {
     "id": "tx_023",
-    "label": "Social work help (side quest unlocked!)"
+    "label": "Refer to social work services"
   },
   {
     "id": "tx_024",
-    "label": "Talk with an interpreter (side quest unlocked!)"
+    "label": "Use medical interpretation services"
   },
   {
     "id": "tx_025",
-    "label": "Ask for another doctor's opinion (assemble your care team!)"
+    "label": "Seek a second medical opinion"
   },
   {
     "id": "tx_026",
-    "label": "Have the care team review your case (detective mode: on)"
+    "label": "Have the care team review your case"
   },
   {
     "id": "tx_027",
-    "label": "Plan for going home from the hospital (detective mode: on)"
+    "label": "Plan for hospital discharge"
   },
   {
     "id": "tx_028",
-    "label": "Learn when to get more help (side quest unlocked!)"
+    "label": "Review warning signs that require urgent care"
   },
   {
     "id": "tx_029",
-    "label": "Make a plan in case things get worse (detective mode: on)"
+    "label": "Create an emergency plan for worsening symptoms"
   },
   {
     "id": "tx_030",
-    "label": "Make a care plan together (detective mode: on)"
+    "label": "Establish a shared care plan"
   },
   {
     "id": "tx_031",
-    "label": "Keep a symptom diary (side quest unlocked!)"
+    "label": "Keep a daily symptom diary"
   },
   {
     "id": "tx_032",
-    "label": "Check your temperature at home (detective mode: on)"
+    "label": "Check your temperature at home"
   },
   {
     "id": "tx_033",
-    "label": "Check blood pressure at home (detective mode: on)"
+    "label": "Check blood pressure at home"
   },
   {
     "id": "tx_034",
-    "label": "Check your pulse at home (detective mode: on)"
+    "label": "Check your pulse at home"
   },
   {
     "id": "tx_035",
-    "label": "Check oxygen levels at home (detective mode: on)"
+    "label": "Check oxygen levels at home"
   },
   {
     "id": "tx_036",
-    "label": "Check blood sugar at home (detective mode: on)"
+    "label": "Check blood sugar at home"
   },
   {
     "id": "tx_037",
-    "label": "Check if you are drinking enough (snack quest!)"
+    "label": "Track your daily fluid intake"
   },
   {
     "id": "tx_038",
-    "label": "Check how your medicine is working (doctor-approved power-up)"
+    "label": "Monitor how your medicine is working"
   },
   {
     "id": "tx_039",
-    "label": "Watch for side effects (detective mode: on)"
+    "label": "Watch for medication side effects"
   },
   {
     "id": "tx_040",
-    "label": "Have a planned check-in (detective mode: on)"
+    "label": "Schedule a planned follow-up check-in"
   },
   {
     "id": "tx_041",
-    "label": "Check in again soon (detective mode: on)"
+    "label": "Check in again soon"
   },
   {
     "id": "tx_042",
-    "label": "Check in after treatment (snack quest!)"
+    "label": "Check in after treatment"
   },
   {
     "id": "tx_043",
-    "label": "Check in from home (detective mode: on)"
+    "label": "Check in remotely from home"
   },
   {
     "id": "tx_044",
-    "label": "Check your health while you are up and about (detective mode: on)"
+    "label": "Monitor your symptoms during everyday activities"
   },
   {
     "id": "tx_045",
-    "label": "Have repeat check-ups (snack quest!)"
+    "label": "Schedule periodic follow-up visits"
   },
   {
     "id": "tx_046",
-    "label": "Rest and recover (cozy-mode bonus)"
+    "label": "Rest and recover"
   },
   {
     "id": "tx_047",
-    "label": "Build healthy sleep habits (cozy-mode bonus)"
+    "label": "Build healthy sleep habits"
   },
   {
     "id": "tx_048",
-    "label": "Balance activity and rest (training montage!)"
+    "label": "Balance physical activity and rest"
   },
   {
     "id": "tx_049",
-    "label": "Ease back into activities (side quest unlocked!)"
+    "label": "Ease back into daily activities"
   },
   {
     "id": "tx_050",
-    "label": "Drink enough fluids (snack quest!)"
+    "label": "Drink plenty of fluids to stay hydrated"
   },
   {
     "id": "tx_051",
-    "label": "Warm fluids for comfort (cozy-mode bonus)"
+    "label": "Drink warm fluids for comfort"
   },
   {
     "id": "tx_052",
-    "label": "Moist air for comfort (cozy-mode bonus)"
+    "label": "Use a humidifier or breathe moist air"
   },
   {
     "id": "tx_053",
-    "label": "Saltwater nose care (side quest unlocked!)"
+    "label": "Use saline nasal spray"
   },
   {
     "id": "tx_054",
-    "label": "Gargle salt water to soothe your throat (cozy-mode bonus)"
+    "label": "Gargle with warm salt water to soothe your throat"
   },
   {
     "id": "tx_055",
-    "label": "Try ways to soothe a sore throat (cozy-mode bonus)"
+    "label": "Use lozenges or remedies to soothe your throat"
   },
   {
     "id": "tx_056",
-    "label": "Try a cool cloth for comfort (cozy-mode bonus)"
+    "label": "Apply a cool cloth for comfort"
   },
   {
     "id": "tx_057",
-    "label": "Try a warm cloth for comfort (cozy-mode bonus)"
+    "label": "Apply a warm compress for comfort"
   },
   {
     "id": "tx_058",
-    "label": "Ask if heat might help (snack quest!)"
+    "label": "Apply heat therapy to ease discomfort"
   },
   {
     "id": "tx_059",
-    "label": "Ask if cold might help (side quest unlocked!)"
+    "label": "Apply a cold compress or ice pack"
   },
   {
     "id": "tx_060",
-    "label": "Avoid things that trigger symptoms (side quest unlocked!)"
+    "label": "Avoid identified symptom triggers"
   },
   {
     "id": "tx_061",
-    "label": "Eat a variety of nourishing foods (snack quest!)"
+    "label": "Eat a variety of nourishing foods"
   },
   {
     "id": "tx_062",
-    "label": "Try small meals throughout the day (snack quest!)"
+    "label": "Eat small meals throughout the day"
   },
   {
     "id": "tx_063",
-    "label": "Try gentle foods for a while (snack quest!)"
+    "label": "Stick to a bland, gentle diet temporarily"
   },
   {
     "id": "tx_064",
-    "label": "Dietary trigger avoidance (side quest unlocked!)"
+    "label": "Avoid foods that trigger digestive symptoms"
   },
   {
     "id": "tx_065",
-    "label": "Get enough fiber in your food (snack quest!)"
+    "label": "Increase dietary fiber intake"
   },
   {
     "id": "tx_066",
-    "label": "Ask if a rehydration drink might help (snack quest!)"
+    "label": "Drink oral rehydration solutions"
   },
   {
     "id": "tx_067",
-    "label": "Check if you need extra fluids and minerals (detective mode: on)"
+    "label": "Assess fluid and electrolyte replacement needs"
   },
   {
     "id": "tx_068",
-    "label": "Cut back on caffeine (side quest unlocked!)"
+    "label": "Cut back on caffeine"
   },
   {
     "id": "tx_069",
-    "label": "Avoid alcohol (side quest unlocked!)"
+    "label": "Avoid alcohol consumption"
   },
   {
     "id": "tx_070",
-    "label": "Get help to stop smoking (side quest unlocked!)"
+    "label": "Enroll in a smoking cessation program"
   },
   {
     "id": "tx_071",
-    "label": "Get help planning meals (snack quest!)"
+    "label": "Get help planning healthy meals"
   },
   {
     "id": "tx_072",
-    "label": "Ask to see a food and nutrition expert (snack quest!)"
+    "label": "Consult a registered dietitian or nutritionist"
   },
   {
     "id": "tx_073",
-    "label": "Avoid foods that cause allergies (snack quest!)"
+    "label": "Strictly avoid known food allergens"
   },
   {
     "id": "tx_074",
-    "label": "Make a plan to drink enough (snack quest!)"
+    "label": "Establish a daily hydration schedule"
   },
   {
     "id": "tx_075",
-    "label": "Check if you are getting enough nourishing food (snack quest!)"
+    "label": "Assess nutritional intake and dietary balance"
   },
   {
     "id": "tx_076",
-    "label": "Try ways to ease pain without medicine (doctor-approved power-up)"
+    "label": "Use non-medicinal pain relief techniques"
   },
   {
     "id": "tx_077",
-    "label": "Ask about creams that may ease pain (side quest unlocked!)"
+    "label": "Apply a topical pain relief cream"
   },
   {
     "id": "tx_078",
-    "label": "Ask to see a movement therapist (training montage!)"
+    "label": "Consult a physical therapist"
   },
   {
     "id": "tx_079",
-    "label": "Change activities that make pain worse (side quest unlocked!)"
+    "label": "Modify activities that aggravate your pain"
   },
   {
     "id": "tx_080",
-    "label": "Make your desk and chair more comfortable (cozy-mode bonus)"
+    "label": "Adjust your desk and chair for ergonomic comfort"
   },
   {
     "id": "tx_081",
-    "label": "Try relaxing to ease pain (cozy-mode bonus)"
+    "label": "Practice relaxation techniques to ease pain"
   },
   {
     "id": "tx_082",
-    "label": "Try breathing exercises to ease pain (snack quest!)"
+    "label": "Practice deep breathing exercises to ease pain"
   },
   {
     "id": "tx_083",
-    "label": "Avoid things that trigger headaches (side quest unlocked!)"
+    "label": "Avoid identified headache triggers"
   },
   {
     "id": "tx_084",
-    "label": "Review your migraine plan (detective mode: on)"
+    "label": "Review your migraine action plan"
   },
   {
     "id": "tx_085",
-    "label": "See a dentist (side quest unlocked!)"
+    "label": "Schedule an appointment with a dentist"
   },
   {
     "id": "tx_086",
-    "label": "Get checked for muscle or bone pain (detective mode: on)"
+    "label": "Undergo an evaluation for musculoskeletal pain"
   },
   {
     "id": "tx_087",
-    "label": "Ask to see a pain specialist (assemble your care team!)"
+    "label": "Consult a pain management specialist"
   },
   {
     "id": "tx_088",
-    "label": "Set goals for doing things despite pain (side quest unlocked!)"
+    "label": "Set realistic daily activity goals despite pain"
   },
   {
     "id": "tx_089",
-    "label": "Learn ways to cope with pain (side quest unlocked!)"
+    "label": "Learn chronic pain coping strategies"
   },
   {
     "id": "tx_090",
-    "label": "Ask a doctor about pain relief medicine (doctor-approved power-up)"
+    "label": "Take pain relief medication"
   },
   {
     "id": "tx_091",
-    "label": "Try breathing exercises (snack quest!)"
+    "label": "Practice deep breathing exercises"
   },
   {
     "id": "tx_092",
-    "label": "Learn how to clear mucus (side quest unlocked!)"
+    "label": "Learn airway clearance and mucus-clearing techniques"
   },
   {
     "id": "tx_093",
-    "label": "Check how to use your inhaler (detective mode: on)"
+    "label": "Review proper inhaler technique"
   },
   {
     "id": "tx_094",
-    "label": "Ask a doctor about breathing medicine (doctor-approved power-up)"
+    "label": "Take prescribed respiratory medication"
   },
   {
     "id": "tx_095",
-    "label": "Ask a doctor about cough relief (assemble your care team!)"
+    "label": "Take cough relief medication"
   },
   {
     "id": "tx_096",
-    "label": "Ask a doctor about a stuffy-nose medicine (doctor-approved power-up)"
+    "label": "Take a decongestant for nasal stuffiness"
   },
   {
     "id": "tx_097",
-    "label": "Ask a doctor about allergy medicine (doctor-approved power-up)"
+    "label": "Take an antihistamine for allergy symptoms"
   },
   {
     "id": "tx_098",
-    "label": "Try a saltwater nose rinse (side quest unlocked!)"
+    "label": "Perform a saline sinus rinse"
   },
   {
     "id": "tx_099",
-    "label": "Rest your voice (cozy-mode bonus)"
+    "label": "Rest your voice"
   },
   {
     "id": "tx_100",
-    "label": "Get an ear, nose, and throat check-up (detective mode: on)"
+    "label": "Schedule an ear, nose, and throat examination"
   },
   {
     "id": "tx_101",
-    "label": "Ask to see a breathing therapist (snack quest!)"
+    "label": "Consult a respiratory therapist"
   },
   {
     "id": "tx_102",
-    "label": "Avoid smoke (side quest unlocked!)"
+    "label": "Avoid exposure to tobacco smoke and airborne irritants"
   },
   {
     "id": "tx_103",
-    "label": "Allergy trigger management (side quest unlocked!)"
+    "label": "Manage and minimize exposure to environmental allergens"
   },
   {
     "id": "tx_104",
-    "label": "Ask if extra oxygen might help (side quest unlocked!)"
+    "label": "Administer supplemental oxygen"
   },
   {
     "id": "tx_105",
-    "label": "Get checked for sleep apnea (detective mode: on)"
+    "label": "Undergo an evaluation for sleep apnea"
   },
   {
     "id": "tx_106",
-    "label": "Ask a doctor about nausea medicine (doctor-approved power-up)"
+    "label": "Take prescribed anti-nausea medication"
   },
   {
     "id": "tx_107",
-    "label": "Ask a doctor about heartburn medicine (doctor-approved power-up)"
+    "label": "Take medication for heartburn relief"
   },
   {
     "id": "tx_108",
-    "label": "Ask a doctor about acid-reducing medicine (doctor-approved power-up)"
+    "label": "Take acid-reducing medication"
   },
   {
     "id": "tx_109",
-    "label": "Ask a doctor about diarrhea medicine (doctor-approved power-up)"
+    "label": "Take anti-diarrheal medication"
   },
   {
     "id": "tx_110",
-    "label": "Ask a doctor about constipation medicine (doctor-approved power-up)"
+    "label": "Take medication for constipation relief"
   },
   {
     "id": "tx_111",
-    "label": "Ask a doctor about stool-softening medicine (doctor-approved power-up)"
+    "label": "Take a stool softener as directed"
   },
   {
     "id": "tx_112",
-    "label": "Ask a doctor about cramp-relief medicine (doctor-approved power-up)"
+    "label": "Take antispasmodic medication for stomach cramps"
   },
   {
     "id": "tx_113",
-    "label": "Try habits that may help with heartburn (side quest unlocked!)"
+    "label": "Adopt lifestyle habits to reduce acid reflux"
   },
   {
     "id": "tx_114",
-    "label": "Avoid things that make nausea worse (side quest unlocked!)"
+    "label": "Avoid foods and triggers that worsen nausea"
   },
   {
     "id": "tx_115",
-    "label": "Get help with bathroom habits (side quest unlocked!)"
+    "label": "Establish a healthy bathroom and bowel routine"
   },
   {
     "id": "tx_116",
-    "label": "Keep track of stomach pain and symptoms (detective mode: on)"
+    "label": "Keep track of abdominal pain and digestive symptoms"
   },
   {
     "id": "tx_117",
-    "label": "Get a stomach and gut specialist visit (assemble your care team!)"
+    "label": "Consult a gastroenterologist for digestive issues"
   },
   {
     "id": "tx_118",
-    "label": "Drink fluids to help your stomach recover (snack quest!)"
+    "label": "Drink fluids to help your stomach recover"
   },
   {
     "id": "tx_119",
-    "label": "Check if you can keep food and drinks down (snack quest!)"
+    "label": "Monitor whether you can keep food and fluids down"
   },
   {
     "id": "tx_120",
-    "label": "Get food advice for stomach symptoms (snack quest!)"
+    "label": "Follow dietary advice for gastrointestinal symptoms"
   },
   {
     "id": "tx_121",
-    "label": "Get help caring for a cut or scrape (side quest unlocked!)"
+    "label": "Receive proper care for cuts and scrapes"
   },
   {
     "id": "tx_122",
-    "label": "Learn how to change a bandage (side quest unlocked!)"
+    "label": "Learn how to change a clean wound dressing"
   },
   {
     "id": "tx_123",
-    "label": "Protect your skin (side quest unlocked!)"
+    "label": "Protect fragile or irritated skin"
   },
   {
     "id": "tx_124",
-    "label": "Clean your skin gently (side quest unlocked!)"
+    "label": "Clean your skin gently with mild soap and water"
   },
   {
     "id": "tx_125",
-    "label": "Itch relief without medicine (doctor-approved power-up)"
+    "label": "Use non-medicinal remedies for itch relief"
   },
   {
     "id": "tx_126",
-    "label": "Ask a doctor about a cream for swelling (assemble your care team!)"
+    "label": "Apply a topical anti-inflammatory steroid cream"
   },
   {
     "id": "tx_127",
-    "label": "Ask a doctor about fungus-fighting medicine (doctor-approved power-up)"
+    "label": "Apply topical antifungal medication"
   },
   {
     "id": "tx_128",
-    "label": "Ask a doctor about germ-fighting skin medicine (doctor-approved power-up)"
+    "label": "Apply topical antibacterial ointment"
   },
   {
     "id": "tx_129",
-    "label": "Ask a doctor about virus-fighting medicine (doctor-approved power-up)"
+    "label": "Take prescribed antiviral medication"
   },
   {
     "id": "tx_130",
-    "label": "Ask to see a skin doctor (assemble your care team!)"
+    "label": "Consult a dermatologist"
   },
   {
     "id": "tx_131",
-    "label": "Get a burn checked (detective mode: on)"
+    "label": "Have a burn evaluated and treated"
   },
   {
     "id": "tx_132",
-    "label": "Help prevent skin sores from sitting or lying too long (side quest unlocked!)"
+    "label": "Reposition regularly to prevent pressure sores"
   },
   {
     "id": "tx_133",
-    "label": "Get help caring for a pressure sore (side quest unlocked!)"
+    "label": "Receive specialized wound care for pressure sores"
   },
   {
     "id": "tx_134",
-    "label": "Check if a wound is infected (detective mode: on)"
+    "label": "Check the wound for signs of infection"
   },
   {
     "id": "tx_135",
-    "label": "Keep track of skin symptoms (detective mode: on)"
+    "label": "Keep track of skin lesions and rash symptoms"
   },
   {
     "id": "tx_136",
-    "label": "Get checked if moving is hard (training montage!)"
+    "label": "Undergo an evaluation for mobility difficulties"
   },
   {
     "id": "tx_137",
-    "label": "Get help moving safely (training montage!)"
+    "label": "Receive assistance to move and transfer safely"
   },
   {
     "id": "tx_138",
-    "label": "Try gentle joint-movement exercises (training montage!)"
+    "label": "Perform gentle range-of-motion joint exercises"
   },
   {
     "id": "tx_139",
-    "label": "Ask about exercises to get stronger (training montage!)"
+    "label": "Follow a targeted strengthening exercise plan"
   },
   {
     "id": "tx_140",
-    "label": "Practice your balance (training montage!)"
+    "label": "Practice daily balance and stability exercises"
   },
   {
     "id": "tx_141",
-    "label": "Fall prevention plan (detective mode: on)"
+    "label": "Implement a home fall prevention plan"
   },
   {
     "id": "tx_142",
-    "label": "Ask about a cane or other helpful device (side quest unlocked!)"
+    "label": "Use a cane, walker, or mobility assist device"
   },
   {
     "id": "tx_143",
-    "label": "Get help with everyday tasks (side quest unlocked!)"
+    "label": "Arrange assistance for everyday activities"
   },
   {
     "id": "tx_144",
-    "label": "Get help building strength and skills (training montage!)"
+    "label": "Participate in physical therapy to rebuild strength"
   },
   {
     "id": "tx_145",
-    "label": "Learn comfortable posture and movement (training montage!)"
+    "label": "Learn comfortable posture and safe body mechanics"
   },
   {
     "id": "tx_146",
-    "label": "Ask if a splint might help (side quest unlocked!)"
+    "label": "Immobilize the joint with a supportive splint"
   },
   {
     "id": "tx_147",
-    "label": "Ask if joint support might help (side quest unlocked!)"
+    "label": "Wear a supportive joint brace or compression sleeve"
   },
   {
     "id": "tx_148",
-    "label": "Ask to see a sports medicine doctor (doctor-approved power-up)"
+    "label": "Consult a sports medicine specialist"
   },
   {
     "id": "tx_149",
-    "label": "Make your school or work space more comfortable (cozy-mode bonus)"
+    "label": "Adjust your work or school space for physical comfort"
   },
   {
     "id": "tx_150",
-    "label": "Set goals for getting back to everyday activities (side quest unlocked!)"
+    "label": "Set milestones for returning to everyday activities"
   },
   {
     "id": "tx_151",
-    "label": "Talk with someone about your feelings (side quest unlocked!)"
+    "label": "Talk with someone about your feelings and mental health"
   },
   {
     "id": "tx_152",
-    "label": "Counseling visit (side quest unlocked!)"
+    "label": "Attend individual counseling sessions"
   },
   {
     "id": "tx_153",
-    "label": "Learn ways to handle tough thoughts and feelings (side quest unlocked!)"
+    "label": "Learn ways to handle tough thoughts and feelings"
   },
   {
     "id": "tx_154",
-    "label": "Learn ways to handle stress (cozy-mode bonus)"
+    "label": "Practice stress management and relaxation techniques"
   },
   {
     "id": "tx_155",
-    "label": "Try mindfulness activities (cozy-mode bonus)"
+    "label": "Practice guided mindfulness activities"
   },
   {
     "id": "tx_156",
-    "label": "Get help sleeping (cozy-mode bonus)"
+    "label": "Follow healthy sleep hygiene practices"
   },
   {
     "id": "tx_157",
-    "label": "Get help with alcohol or drug use (side quest unlocked!)"
+    "label": "Seek professional help for alcohol or drug use"
   },
   {
     "id": "tx_158",
-    "label": "Talk with people your age who understand (side quest unlocked!)"
+    "label": "Connect with a peer support group"
   },
   {
     "id": "tx_159",
-    "label": "Get help for your family or caregivers (side quest unlocked!)"
+    "label": "Access caregiver and family support resources"
   },
   {
     "id": "tx_160",
-    "label": "Try activities that can lift your mood (side quest unlocked!)"
+    "label": "Engage in mood-boosting and pleasant activities"
   },
   {
     "id": "tx_161",
-    "label": "Get caring support after a scary experience (side quest unlocked!)"
+    "label": "Receive compassionate support after a traumatic experience"
   },
   {
     "id": "tx_162",
-    "label": "Ask to see a mental health doctor (assemble your care team!)"
+    "label": "Consult a psychiatrist or mental health specialist"
   },
   {
     "id": "tx_163",
-    "label": "Ask a doctor about medicine for mood (doctor-approved power-up)"
+    "label": "Review medication options for mood stabilization"
   },
   {
     "id": "tx_164",
-    "label": "Ask a doctor about medicine for anxiety (doctor-approved power-up)"
+    "label": "Review medication options for anxiety"
   },
   {
     "id": "tx_165",
-    "label": "Make a plan to check in about your feelings (detective mode: on)"
+    "label": "Schedule regular check-ins about emotional wellbeing"
   },
   {
     "id": "tx_166",
-    "label": "Review your medicine list with an adult and doctor (doctor-approved power-up)"
+    "label": "Review your complete medication list with your doctor"
   },
   {
     "id": "tx_167",
-    "label": "Get help remembering medicines (doctor-approved power-up)"
+    "label": "Use a medication pill organizer or reminder system"
   },
   {
     "id": "tx_168",
-    "label": "Check if medicines can be taken together (doctor-approved power-up)"
+    "label": "Verify that medications are safe to take together"
   },
   {
     "id": "tx_169",
-    "label": "Check for medicine allergies (doctor-approved power-up)"
+    "label": "Check for known medication allergies"
   },
   {
     "id": "tx_170",
-    "label": "Check for medicine side effects (doctor-approved power-up)"
+    "label": "Monitor and report medication side effects"
   },
   {
     "id": "tx_171",
-    "label": "Ask a doctor about antibiotics (doctor-approved power-up)"
+    "label": "Take a prescribed course of antibiotics"
   },
   {
     "id": "tx_172",
-    "label": "Ask a doctor about medicine for parasites (doctor-approved power-up)"
+    "label": "Take anti-parasitic medication as directed"
   },
   {
     "id": "tx_173",
-    "label": "Ask a doctor about medicine to clean a wound (doctor-approved power-up)"
+    "label": "Clean the wound with an antiseptic solution"
   },
   {
     "id": "tx_174",
-    "label": "Ask a doctor about swelling-reducing medicine (doctor-approved power-up)"
+    "label": "Take anti-inflammatory medication to reduce swelling"
   },
   {
     "id": "tx_175",
-    "label": "Ask a doctor about blood-thinning medicine (doctor-approved power-up)"
+    "label": "Take prescribed blood-thinning medication"
   },
   {
     "id": "tx_176",
-    "label": "Ask a doctor about blood pressure medicine (doctor-approved power-up)"
+    "label": "Take prescribed blood pressure medication"
   },
   {
     "id": "tx_177",
-    "label": "Ask a doctor about diabetes medicine (doctor-approved power-up)"
+    "label": "Take prescribed diabetes medication"
   },
   {
     "id": "tx_178",
-    "label": "Ask a doctor about cholesterol medicine (doctor-approved power-up)"
+    "label": "Take prescribed cholesterol medication"
   },
   {
     "id": "tx_179",
-    "label": "Ask a doctor about immune system medicine (doctor-approved power-up)"
+    "label": "Take prescribed immunosuppressant or immune therapy"
   },
   {
     "id": "tx_180",
-    "label": "Ask a doctor before changing any medicine (doctor-approved power-up)"
+    "label": "Do not alter or stop any medicine without consulting your doctor"
   },
   {
     "id": "tx_181",
-    "label": "Review your plan for an ongoing health condition (detective mode: on)"
+    "label": "Review your plan for managing an ongoing health condition"
   },
   {
     "id": "tx_182",
-    "label": "Get help keeping blood pressure healthy (side quest unlocked!)"
+    "label": "Follow a plan to keep blood pressure healthy"
   },
   {
     "id": "tx_183",
-    "label": "Learn how to care for diabetes (side quest unlocked!)"
+    "label": "Learn how to manage diabetes effectively"
   },
   {
     "id": "tx_184",
-    "label": "Review your asthma action plan (detective mode: on)"
+    "label": "Review and follow your asthma action plan"
   },
   {
     "id": "tx_185",
-    "label": "Review your breathing health plan (snack quest!)"
+    "label": "Review your respiratory health plan"
   },
   {
     "id": "tx_186",
-    "label": "Review your heart health plan (detective mode: on)"
+    "label": "Review and optimize your heart health plan"
   },
   {
     "id": "tx_187",
-    "label": "Review your seizure plan (detective mode: on)"
+    "label": "Review your seizure action and safety plan"
   },
   {
     "id": "tx_188",
-    "label": "Review your migraine prevention plan (detective mode: on)"
+    "label": "Review your migraine prevention regimen"
   },
   {
     "id": "tx_189",
-    "label": "Review your arthritis care plan (detective mode: on)"
+    "label": "Review your arthritis care plan"
   },
   {
     "id": "tx_190",
-    "label": "Review your ongoing pain plan (detective mode: on)"
+    "label": "Review your ongoing pain management plan"
   },
   {
     "id": "tx_191",
-    "label": "Check if any health check-ups were missed (detective mode: on)"
+    "label": "Catch up on any missed health check-ups"
   },
   {
     "id": "tx_192",
-    "label": "Learn how to care for your health (side quest unlocked!)"
+    "label": "Receive education on managing your health condition"
   },
   {
     "id": "tx_193",
-    "label": "Check what equipment might help at home (detective mode: on)"
+    "label": "Assess what assistive equipment is needed at home"
   },
   {
     "id": "tx_194",
-    "label": "Get help coordinating ongoing health care (side quest unlocked!)"
+    "label": "Coordinate ongoing medical care with your health team"
   },
   {
     "id": "tx_195",
-    "label": "Review care for more than one health condition (detective mode: on)"
+    "label": "Coordinate care across multiple chronic conditions"
   },
   {
     "id": "tx_196",
-    "label": "Check which vaccines you have had (doctor-approved power-up)"
+    "label": "Review your immunization and vaccine history"
   },
   {
     "id": "tx_197",
-    "label": "Ask a doctor about vaccines (doctor-approved power-up)"
+    "label": "Receive recommended vaccinations"
   },
   {
     "id": "tx_198",
-    "label": "Learn when and how to wash your hands (side quest unlocked!)"
+    "label": "Practice proper handwashing and hygiene technique"
   },
   {
     "id": "tx_199",
-    "label": "Help prevent breathing illnesses (snack quest!)"
+    "label": "Take precautions to prevent respiratory illnesses"
   },
   {
     "id": "tx_200",
-    "label": "Learn how to avoid spreading germs (side quest unlocked!)"
+    "label": "Follow infection control measures to avoid spreading illness"
   },
   {
     "id": "tx_201",
-    "label": "Learn ways to stop germs from spreading (side quest unlocked!)"
+    "label": "Practice respiratory etiquette and infection barrier measures"
   },
   {
     "id": "tx_202",
-    "label": "Talk about being around someone who is sick (side quest unlocked!)"
+    "label": "Monitor symptoms after being around someone who is sick"
   },
   {
     "id": "tx_203",
-    "label": "Ask a doctor what to do after being near germs (assemble your care team!)"
+    "label": "Follow post-exposure guidance after germ exposure"
   },
   {
     "id": "tx_204",
-    "label": "Talk with a doctor about travel health (assemble your care team!)"
+    "label": "Review travel health advice and required precautions"
   },
   {
     "id": "tx_205",
-    "label": "Preventive care follow-up (side quest unlocked!)"
+    "label": "Schedule a preventive care follow-up"
   },
   {
     "id": "tx_206",
-    "label": "Plan health screenings (detective mode: on)"
+    "label": "Schedule recommended health screenings"
   },
   {
     "id": "tx_207",
-    "label": "Learn how to prevent injuries (side quest unlocked!)"
+    "label": "Follow home injury prevention guidelines"
   },
   {
     "id": "tx_208",
-    "label": "Sun protection help (side quest unlocked!)"
+    "label": "Use broad-spectrum sunscreen and sun protection"
   },
   {
     "id": "tx_209",
-    "label": "Help keep your teeth and mouth healthy (side quest unlocked!)"
+    "label": "Maintain oral hygiene and schedule regular dental visits"
   },
   {
     "id": "tx_210",
-    "label": "Talk with a trusted health professional about sexual health (side quest unlocked!)"
+    "label": "Consult a healthcare professional regarding sexual health"
   },
   {
     "id": "tx_211",
-    "label": "Keep medicines safely stored with an adult (doctor-approved power-up)"
+    "label": "Store prescription medicines safely and securely"
   },
   {
     "id": "tx_212",
-    "label": "Home safety check-up (detective mode: on)"
+    "label": "Perform a home environment safety check-up"
   },
   {
     "id": "tx_213",
-    "label": "Plan tests to find out what is wrong (detective mode: on)"
+    "label": "Order diagnostic tests to determine the cause"
   },
   {
     "id": "tx_214",
-    "label": "Plan lab tests (detective mode: on)"
+    "label": "Order routine laboratory tests"
   },
   {
     "id": "tx_215",
-    "label": "Plan a scan (detective mode: on)"
+    "label": "Order diagnostic imaging scans"
   },
   {
     "id": "tx_216",
-    "label": "Get a heart test (detective mode: on)"
+    "label": "Perform an electrocardiogram or heart test"
   },
   {
     "id": "tx_217",
-    "label": "Review quick test results (detective mode: on)"
+    "label": "Review rapid point-of-care test results"
   },
   {
     "id": "tx_218",
-    "label": "Plan a sample test (detective mode: on)"
+    "label": "Collect laboratory specimens for analysis"
   },
   {
     "id": "tx_219",
-    "label": "Follow up on test results (detective mode: on)"
+    "label": "Follow up on pending diagnostic test results"
   },
   {
     "id": "tx_220",
-    "label": "Follow up after a check-up (detective mode: on)"
+    "label": "Schedule a follow-up visit after examination"
   },
   {
     "id": "tx_221",
-    "label": "Check if a procedure is right for you (detective mode: on)"
+    "label": "Determine whether a surgical procedure is indicated"
   },
   {
     "id": "tx_222",
-    "label": "Ask about a small medical procedure (side quest unlocked!)"
+    "label": "Undergo a minor outpatient medical procedure"
   },
   {
     "id": "tx_223",
-    "label": "Check if a cut needs closing (detective mode: on)"
+    "label": "Examine the cut to evaluate if closure or stitches are needed"
   },
   {
     "id": "tx_224",
-    "label": "Ask if a procedure to drain fluid is needed (side quest unlocked!)"
+    "label": "Perform a procedure to drain excess fluid"
   },
   {
     "id": "tx_225",
-    "label": "Talk with a specialist about a procedure (assemble your care team!)"
+    "label": "Consult a specialist regarding a procedure"
   },
   {
     "id": "tx_226",
-    "label": "Check if numbing medicine is safe (doctor-approved power-up)"
+    "label": "Verify that local numbing medication is safe to use"
   },
   {
     "id": "tx_227",
-    "label": "Talk about care before and after surgery (side quest unlocked!)"
+    "label": "Review pre-operative and post-operative surgical instructions"
   },
   {
     "id": "tx_228",
-    "label": "Check what recovery help is needed (detective mode: on)"
+    "label": "Assess what recovery assistance is needed after surgery"
   },
   {
     "id": "tx_229",
-    "label": "Check what help is needed at home (detective mode: on)"
+    "label": "Assess what personal care help is needed at home"
   },
   {
     "id": "tx_230",
-    "label": "Check how everyday activities are going (detective mode: on)"
+    "label": "Evaluate how everyday activities and functional tasks are going"
   },
   {
     "id": "tx_231",
-    "label": "Talk with a doctor about pregnancy concerns (assemble your care team!)"
+    "label": "Discuss pregnancy concerns and prenatal health"
   },
   {
     "id": "tx_232",
-    "label": "Ask to see a pregnancy doctor (assemble your care team!)"
+    "label": "Consult an obstetrician or gynecologist"
   },
   {
     "id": "tx_233",
-    "label": "Get a check-up after having a baby (detective mode: on)"
+    "label": "Schedule a postpartum check-up"
   },
   {
     "id": "tx_234",
-    "label": "See a doctor who cares for kids (assemble your care team!)"
+    "label": "Consult a pediatrician"
   },
   {
     "id": "tx_235",
-    "label": "See a doctor who cares for older people (assemble your care team!)"
+    "label": "Consult a geriatrician"
   },
   {
     "id": "tx_236",
-    "label": "Plan extra help for strength and safety (training montage!)"
+    "label": "Arrange physical rehabilitation for strength and stability"
   },
   {
     "id": "tx_237",
-    "label": "Get help that fits your age and needs (side quest unlocked!)"
+    "label": "Access supportive health services tailored to your age"
   },
   {
     "id": "tx_238",
-    "label": "Make a care plan with a trusted adult (detective mode: on)"
+    "label": "Develop a care plan in coordination with a caregiver"
   },
   {
     "id": "tx_239",
-    "label": "Get breastfeeding help (side quest unlocked!)"
+    "label": "Consult a lactation specialist for breastfeeding support"
   },
   {
     "id": "tx_240",
-    "label": "Talk about periods (side quest unlocked!)"
+    "label": "Evaluate menstrual symptoms and cycle health"
   },
   {
     "id": "tx_241",
-    "label": "Ask to see a doctor about body changes and reproductive health (assemble your care team!)"
+    "label": "Consult a specialist regarding reproductive health and development"
   },
   {
     "id": "tx_242",
-    "label": "Talk about comfort care (cozy-mode bonus)"
+    "label": "Discuss palliative and comfort care options"
   },
   {
     "id": "tx_243",
-    "label": "Talk about what matters in your care (side quest unlocked!)"
+    "label": "Discuss personal goals and values regarding your care"
   },
   {
     "id": "tx_244",
-    "label": "Make care easier to access (side quest unlocked!)"
+    "label": "Identify ways to make healthcare easier to access"
   },
   {
     "id": "tx_245",
-    "label": "Get help in your language (side quest unlocked!)"
+    "label": "Arrange medical care with professional language interpretation"
   },
   {
     "id": "tx_246",
-    "label": "Ask to see a brain doctor (assemble your care team!)"
+    "label": "Consult a neurologist"
   },
   {
     "id": "tx_247",
-    "label": "Ask to see a heart doctor (assemble your care team!)"
+    "label": "Consult a cardiologist"
   },
   {
     "id": "tx_248",
-    "label": "Ask to see a stomach and gut specialist (assemble your care team!)"
+    "label": "Consult a gastroenterologist"
   },
   {
     "id": "tx_249",
-    "label": "Ask to see a breathing specialist (snack quest!)"
+    "label": "Consult a pulmonologist"
   },
   {
     "id": "tx_250",
-    "label": "Ask to see an infection specialist (assemble your care team!)"
+    "label": "Consult an infectious disease specialist"
   },
   {
     "id": "tx_251",
-    "label": "Ask to see a joint specialist (assemble your care team!)"
+    "label": "Consult a rheumatologist"
   },
   {
     "id": "tx_252",
-    "label": "Ask to see a doctor about hormones (assemble your care team!)"
+    "label": "Consult an endocrinologist"
   },
   {
     "id": "tx_253",
-    "label": "Ask to see a urinary health doctor (assemble your care team!)"
+    "label": "Consult a urologist"
   },
   {
     "id": "tx_254",
-    "label": "Ask to see an eye doctor (assemble your care team!)"
+    "label": "Consult an ophthalmologist"
   },
   {
     "id": "tx_255",
-    "label": "Ask to see an ear, nose, and throat doctor (assemble your care team!)"
+    "label": "Consult an ear, nose, and throat specialist"
   }
 ]

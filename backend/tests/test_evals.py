@@ -66,7 +66,7 @@ def test_validate_expected_accepts_good_values():
         ("criticality", [7, 9]),
         ("criticality", 8),
         ("call_ambulance", True),
-        ("treatment", "Rest and recover (cozy-mode bonus)"),
+        ("treatment", "Rest and recover"),
         ("patient_emotion", ["angry", "afraid"]),
     ]:
         validate_expected(field, expected)
