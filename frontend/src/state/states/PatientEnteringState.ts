@@ -10,7 +10,7 @@ export class PatientEnteringState implements IGameStateNode {
   public readonly label = 'Patient Entering';
   public readonly canTypeAnswer = false;
   public readonly canAdvanceDialogue = true;
-  public readonly advanceButtonLabel = 'Begin Consultation →';
+  public readonly advanceButtonLabel = 'Start Consultation →';
 
   public handleEvent(
     snapshot: GameStateSnapshot,

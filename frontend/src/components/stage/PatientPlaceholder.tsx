@@ -2,7 +2,9 @@ import { useGame } from '../../hooks/useGame';
 
 export function PatientPlaceholder() {
   const { snapshot } = useGame();
-  const isEntered = snapshot.stateId !== 'INIT_SESSION';
+  const isEntered =
+    snapshot.stateId !== 'INIT_SESSION' &&
+    snapshot.stateId !== 'PATIENT_ENTERING';
   const isKickedOut = Boolean(
     snapshot.stateId === 'CONSULTATION_COMPLETE' &&
       snapshot.patientCase.latestJudgement?.kickOutOffice

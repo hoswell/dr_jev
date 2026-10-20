@@ -22,11 +22,11 @@ describe('Dr. Jev UI Integration', () => {
       expect(screen.getAllByText(DUMMY_PLAYER_ID).length).toBeGreaterThan(0);
     });
 
-    // Click "Begin Consultation →"
-    const beginBtn = screen.getByRole('button', {
-      name: /Begin Consultation/i,
+    // Click "Start Consultation →"
+    const startBtn = screen.getByRole('button', {
+      name: /Start Consultation/i,
     });
-    fireEvent.click(beginBtn);
+    fireEvent.click(startBtn);
 
     // Input box should now be visible
     const input = screen.getByPlaceholderText(
