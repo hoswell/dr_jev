@@ -5,6 +5,7 @@ import type {
 } from '../IGameStateNode';
 import { AwaitingPatientInputState } from './AwaitingPatientInputState';
 import { ConsultationCompleteState } from './ConsultationCompleteState';
+import { WaitingForAmbulanceState } from './AmbulanceState';
 
 export class EvaluatingWithJevState implements IGameStateNode {
   public readonly id = 'EVALUATING_WITH_JEV' as const;
@@ -19,6 +20,26 @@ export class EvaluatingWithJevState implements IGameStateNode {
   ): { nextState: IGameStateNode; nextSnapshot: GameStateSnapshot } {
     if (event.type === 'JEV_RESPONSE_RECEIVED') {
       const updatedSession = snapshot.session.withPlayerId(event.playerId);
+      // An ambulance response ends questioning, including on the final question.
+      if (event.judgement.callAmbulance) {
+        const nextState = new WaitingForAmbulanceState();
+        return {
+          nextState,
+          nextSnapshot: {
+            ...snapshot,
+            stateId: nextState.id,
+            stateLabel: nextState.label,
+            canTypeAnswer: nextState.canTypeAnswer,
+            canAdvanceDialogue: nextState.canAdvanceDialogue,
+            advanceButtonLabel: nextState.advanceButtonLabel,
+            session: updatedSession,
+            patientCase: snapshot.patientCase.withJudgementAndAdvance(event.judgement, false),
+            speaker: 'Dr. Jev',
+            dialogueText: 'We need an ambulance. Let’s head outside and wait for the crew. No more questions for now.',
+            error: null,
+          },
+        };
+      }
       const isFinalQuestion = snapshot.patientCase.isLastQuestion;
       const isKickedOut = event.judgement.kickOutOffice;
 

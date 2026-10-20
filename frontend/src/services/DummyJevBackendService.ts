@@ -47,9 +47,11 @@ export const DUMMY_DOCTOR_REACTION =
  */
 export class DummyJevBackendService implements IJevBackendService {
   private readonly simulatedDelayMs: number;
+  private readonly assessment: BackendJevAssessmentDto;
 
-  constructor(simulatedDelayMs = 200) {
+  constructor(simulatedDelayMs = 200, assessment = DUMMY_ASSESSMENT_DTO) {
     this.simulatedDelayMs = simulatedDelayMs;
+    this.assessment = assessment;
   }
 
   public async initializeSession(): Promise<InitSessionResult> {
@@ -71,7 +73,7 @@ export class DummyJevBackendService implements IJevBackendService {
 
     return {
       sessionId: request.sessionId,
-      judgement: new JevJudgementModel(DUMMY_ASSESSMENT_DTO),
+      judgement: new JevJudgementModel(this.assessment),
       doctorReaction: DUMMY_DOCTOR_REACTION,
     };
   }

@@ -12,7 +12,9 @@ export function DialoguePanel() {
       <DialogueTextBox />
 
       <div className="vn-interaction-bar">
-        {snapshot.canTypeAnswer ? (
+        {snapshot.stateId === 'WAITING_FOR_AMBULANCE' ? (
+          <div className="vn-waiting-indicator" role="status">Questions paused · Waiting outside for the ambulance</div>
+        ) : snapshot.canTypeAnswer ? (
           <PatientAnswerForm />
         ) : snapshot.canAdvanceDialogue ? (
           <div className="vn-advance-row">

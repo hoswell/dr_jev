@@ -1,4 +1,5 @@
 import { useGame } from '../../hooks/useGame';
+import { isAmbulanceScene } from '../../state/IGameStateNode';
 
 export function DialogueHeader() {
   const { snapshot } = useGame();
@@ -14,7 +15,7 @@ export function DialogueHeader() {
       <div className="vn-status-pills">
         <span className="vn-state-pill">State: {snapshot.stateLabel}</span>
         <span className="vn-progress-pill">
-          {snapshot.patientCase.progressLabel}
+          {isAmbulanceScene(snapshot.stateId) ? 'Consultation stopped' : snapshot.patientCase.progressLabel}
         </span>
       </div>
     </div>

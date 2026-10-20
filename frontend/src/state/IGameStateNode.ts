@@ -10,7 +10,13 @@ export type GameStateId =
   | 'PATIENT_ENTERING'
   | 'AWAITING_PATIENT_INPUT'
   | 'EVALUATING_WITH_JEV'
+  | 'WAITING_FOR_AMBULANCE'
+  | 'AMBULANCE_ARRIVED'
   | 'CONSULTATION_COMPLETE';
+
+export function isAmbulanceScene(stateId: GameStateId): boolean {
+  return stateId === 'WAITING_FOR_AMBULANCE' || stateId === 'AMBULANCE_ARRIVED';
+}
 
 export interface GameStateSnapshot {
   readonly stateId: GameStateId;
@@ -34,6 +40,7 @@ export type GameEvent =
   | { readonly type: 'SESSION_ERROR'; readonly error: string }
   | { readonly type: 'BEGIN_CONSULTATION' }
   | { readonly type: 'SUBMIT_ANSWER'; readonly answer: string }
+  | { readonly type: 'AMBULANCE_ARRIVED' }
   | {
       readonly type: 'JEV_RESPONSE_RECEIVED';
       readonly playerId: string;

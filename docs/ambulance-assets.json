@@ -1,0 +1,16 @@
+{
+  "generator": "Built-in image_gen tool",
+  "reference_assets": ["frontend/public/hospital-bg.jpg", "frontend/public/dr-jev-neutral.png"],
+  "assets": [
+    {
+      "path": "frontend/public/clinic-outside.png",
+      "transparent_background": false,
+      "prompt": "Use case: illustration-story. Asset type: wide 16:9 game background for the existing Dr Jev visual novel. The supplied image is a STYLE REFERENCE only. Create the exterior of this same small friendly clinic, viewed at street level from outside while waiting for an ambulance. Match the reference's hand drawn dark brown clean outlines, soft pastel teal and warm cream architecture, gentle cel shading, warm daylight, charming illustrated game look. Clinic entrance and windows in upper half, plants and a waiting bench at side, large open flat road across bottom 40 percent for a separately animated vehicle. Camera level, road horizontal. No people, no vehicles, no UI, no text, no watermark. Full bleed environment only."
+    },
+    {
+      "path": "frontend/public/ambulance.png",
+      "transparent_background": true,
+      "prompt": "Use case: illustration-story. Asset type: one transparent game vehicle sprite. The two supplied images are STYLE REFERENCES only. Draw a single full ambulance in the same illustrated Dr Jev visual novel style: clean dark brown outlines, warm cel shading, soft teal accents, cream white body, muted green/yellow checker stripe, dark rubber wheels, blue emergency light bar. Side view with subtle visible front, FRONT FACING LEFT so it can drive in from the right. Full vehicle visible uncropped, both wheels on same horizontal baseline. Friendly classic boxy ambulance proportion, clear readable silhouette, matching reference artwork line weight. No driver or people. No text or logos. Genuine transparent background, no ground plane, no scenery, no UI. Vehicle should occupy most of wide canvas with small transparent margins."
+    }
+  ]
+}

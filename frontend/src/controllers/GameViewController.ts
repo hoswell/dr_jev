@@ -55,7 +55,7 @@ export class GameViewController {
 
     if (stateId === 'PATIENT_ENTERING') {
       this.stateMachine.dispatch({ type: 'BEGIN_CONSULTATION' });
-    } else if (stateId === 'CONSULTATION_COMPLETE') {
+    } else if (stateId === 'CONSULTATION_COMPLETE' || stateId === 'AMBULANCE_ARRIVED') {
       try {
         const nextSession = await this.backendService.initializeSession();
         this.stateMachine.dispatch({
@@ -66,6 +66,10 @@ export class GameViewController {
         this.stateMachine.dispatch({ type: 'NEXT_PATIENT' });
       }
     }
+  };
+
+  public ambulanceArrived = (): void => {
+    this.stateMachine.dispatch({ type: 'AMBULANCE_ARRIVED' });
   };
 
   /**

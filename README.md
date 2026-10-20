@@ -64,3 +64,11 @@ Each field in the response carries Jev's certainty alongside its value:
 cd backend
 uv run pytest   # Jev is mocked, no API key needed
 ```
+
+## Ambulance sequence
+
+When an assessment returns `call_ambulance: true` (or `{ "noul": true, ... }`), the frontend stops the questions immediately and retains the current answer and assessment. It switches to the illustrated clinic exterior and animates an ambulance arriving from the right. Once it arrives, **Call Next Patient** starts a fresh consultation. Reduced-motion preferences skip the drive-in animation.
+
+Run `pnpm --dir frontend test` for the normal consultation and ambulance interruption tests. These tests use simulated responses and do not call Jev. Artwork prompts and asset locations are recorded in `docs/ambulance-assets.json`.
+
+For a local walkthrough, open `http://127.0.0.1:5173/?demo=ambulance` while the frontend development server is running. Click **Start Consultation**, enter any answer, and click **Send to Dr. Jev**. The first response always triggers the ambulance scene. The header identifies the simulated results; no backend or API key is needed. This preview is disabled in production builds. Remove `?demo=ambulance` to use the real backend.
