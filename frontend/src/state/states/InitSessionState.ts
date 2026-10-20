@@ -35,7 +35,7 @@ export class InitSessionState implements IGameStateNode {
           session: updatedSession,
           patientCase: updatedPatientCase,
           speaker: 'Dr. Jev',
-          dialogueText: `Welcome to St. Jev's Hospital! (Session #${event.playerId}). Send in the first patient!`,
+          dialogueText: "Welcome to St. Jev's Hospital! Send in the first patient!",
           error: null,
         },
       };

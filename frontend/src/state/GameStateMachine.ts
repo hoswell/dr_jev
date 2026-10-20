@@ -29,8 +29,7 @@ export class GameStateMachine {
       session: new PlayerSessionModel(null),
       patientCase: new PatientCaseModel({ patientNumber: 1 }),
       speaker: 'System',
-      dialogueText:
-        'Connecting to JEV Medical Mainframe & requesting Player ID...',
+      dialogueText: 'Connecting to JEV Medical Mainframe...',
       error: null,
     };
   }
