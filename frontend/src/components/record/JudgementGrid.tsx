@@ -104,24 +104,6 @@ export function JudgementGrid() {
           )}
         </div>
       </div>
-
-      <div className="judgement-card full-width">
-        <span className="judgement-label">Clinic Dismissal Status</span>
-        <div className="judgement-val-row">
-          <span
-            className={`judgement-pill ${
-              judgement.kickOutOffice ? 'pill-danger' : 'pill-safe'
-            }`}
-          >
-            {judgement.formattedKickOutStatus}
-          </span>
-          {judgement.kickOutProbabilityDisplay && (
-            <span className="confidence-tag">
-              {judgement.kickOutProbabilityDisplay}
-            </span>
-          )}
-        </div>
-      </div>
     </div>
   );
 }

@@ -54,6 +54,5 @@ describe('Dr. Jev UI Integration', () => {
       screen.getByText('8/9 — Very honest and forthcoming')
     ).toBeDefined();
     expect(screen.getAllByText('Calm').length).toBeGreaterThanOrEqual(1);
-    expect(screen.getByText('Keep in Clinic')).toBeDefined();
   });
 });
