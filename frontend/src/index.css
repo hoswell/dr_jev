@@ -1,0 +1,5 @@
+@import './styles/variables.css';
+@import './styles/layout.css';
+@import './styles/stage.css';
+@import './styles/dialogue.css';
+@import './styles/patientRecord.css';
