@@ -20,8 +20,8 @@ from backend.schemas import (
     JevAssessment,
     NoulResult,
     ScoreResult,
-    Treatment,
 )
+from backend.treatments import TREATMENT_CRITERIA, Treatment
 
 load_dotenv()  # TYPESAFE_API_KEY
 
@@ -62,13 +62,7 @@ QUESTIONS = {
     ),
     "treatment": Choice(
         instructions="What is the most appropriate treatment for this patient?",
-        criteria={
-            Treatment.NONE: "No treatment required",
-            Treatment.REST: "Rest and self-care at home is enough",
-            Treatment.MEDICATION: "Medication is needed, but no hospital visit",
-            Treatment.HOSPITAL_VISIT: "The patient needs to be seen at a hospital",
-            Treatment.SURGERY: "The patient needs surgery",
-        },
+        criteria=TREATMENT_CRITERIA,
     ),
     "patient_honesty": Score(
         instructions="How honest and candid is the patient being in their answers?",
@@ -111,15 +105,6 @@ def _state(answers: list[Answer]) -> list[dict[str, str]]:
     ]
 
 
-TREATMENT_LABELS: dict[Treatment, str] = {
-    Treatment.NONE: "No Treatment Required",
-    Treatment.REST: "Rest & Recovery",
-    Treatment.MEDICATION: "Prescribe Medication",
-    Treatment.HOSPITAL_VISIT: "Hospital Visit / Admission",
-    Treatment.SURGERY: "Immediate Surgery",
-}
-
-
 def _score(response: SystemOneResponse, name: str) -> ScoreResult:
     answer = response.scores[name]
     score = round(answer.score)
@@ -134,8 +119,8 @@ def _choice[T: StrEnum](
     answer = response.choices[name]
     choice = options(answer.choice)
     label: str | None = None
-    if options is Treatment and choice in TREATMENT_LABELS:
-        label = TREATMENT_LABELS[choice]
+    if options is Treatment:
+        label = choice.value
     elif options is Emotion:
         label = choice.value.title()
     return ChoiceResult[T](choice=choice, confidence=answer.confidence, label=label)

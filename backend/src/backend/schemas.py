@@ -2,13 +2,7 @@ from enum import StrEnum
 
 from pydantic import BaseModel, Field
 
-
-class Treatment(StrEnum):
-    NONE = "none"
-    REST = "rest"
-    MEDICATION = "medication"
-    HOSPITAL_VISIT = "hospital_visit"
-    SURGERY = "surgery"
+from backend.treatments import Treatment
 
 
 class Emotion(StrEnum):

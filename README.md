@@ -48,7 +48,7 @@ Each field in the response carries Jev's certainty alongside its value:
 {
   "criticality":     {"score": 8, "confidence": 0.91},
   "call_ambulance":  {"noul": true, "probability": 0.62},
-  "treatment":       {"choice": "hospital_visit", "confidence": 0.93},
+  "treatment":       {"choice": "Get checked in the emergency room", "confidence": 0.93},
   "patient_honesty": {"score": 2, "confidence": 0.92},
   "patient_emotion": {"choice": "afraid", "confidence": 0.94},
   "doctor_emotion":  {"choice": "anxious", "confidence": 0.95},

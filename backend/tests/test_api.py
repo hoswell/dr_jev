@@ -54,9 +54,9 @@ class FakeClient:
                     "kick_out_office": {"type": "noul", "noul": 0.1},
                     "treatment": {
                         "type": "choice",
-                        "choice": "hospital_visit",
+                        "choice": "Get checked in the emergency room",
                         "confidence": 0.93,
-                        "probabilities": {"hospital_visit": 0.9, "rest": 0.1},
+                        "probabilities": {"Get checked in the emergency room": 0.9, "Rest and recover (cozy-mode bonus)": 0.1},
                     },
                     "patient_emotion": {
                         "type": "choice",
@@ -115,9 +115,9 @@ def test_submit_answers():
         },
         "call_ambulance": {"noul": True, "probability": 0.6},
         "treatment": {
-            "choice": "hospital_visit",
+            "choice": "Get checked in the emergency room",
             "confidence": 0.93,
-            "label": "Hospital Visit / Admission",
+            "label": "Get checked in the emergency room",
         },
         "patient_honesty": {
             "score": 2,

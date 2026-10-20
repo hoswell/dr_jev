@@ -15,7 +15,7 @@ def _assessment() -> JevAssessment:
     return JevAssessment(
         criticality=ScoreResult(score=8, confidence=0.9),
         call_ambulance=NoulResult(noul=True, probability=0.9),
-        treatment=ChoiceResult[Treatment](choice=Treatment.HOSPITAL_VISIT, confidence=0.8),
+        treatment=ChoiceResult[Treatment](choice=Treatment.TX_003, confidence=0.8),
         patient_honesty=ScoreResult(score=2, confidence=0.7),
         patient_emotion=ChoiceResult[Emotion](choice=Emotion.AFRAID, confidence=0.6),
         doctor_emotion=ChoiceResult[Emotion](choice=Emotion.ANXIOUS, confidence=0.5),
@@ -28,7 +28,7 @@ def test_flatten_covers_every_field_and_result_type():
 
     assert set(graded) == set(FIELDS)
     assert (graded["criticality"].value, graded["criticality"].confidence) == (8, 0.9)
-    assert (graded["treatment"].value, graded["treatment"].confidence) == ("hospital_visit", 0.8)
+    assert (graded["treatment"].value, graded["treatment"].confidence) == ("Get checked in the emergency room", 0.8)
     assert graded["call_ambulance"].value is True
     assert graded["call_ambulance"].confidence == pytest.approx(0.8)  # |2*0.9 - 1|
     assert graded["kick_out_office"].value is False
@@ -65,7 +65,7 @@ def test_validate_expected_accepts_good_values():
         ("criticality", [7, 9]),
         ("criticality", 8),
         ("call_ambulance", True),
-        ("treatment", "rest"),
+        ("treatment", "Rest and recover (cozy-mode bonus)"),
         ("patient_emotion", ["angry", "afraid"]),
     ]:
         validate_expected(field, expected)
