@@ -4,6 +4,11 @@ export function PatientPlaceholder() {
   const { snapshot } = useGame();
   const isEntered = snapshot.stateId !== 'INIT_SESSION';
 
+  // Cycle through the 20 patient sprites (patient-01.png .. patient-20.png)
+  const spriteIndex = ((snapshot.patientCase.patientNumber - 1) % 20) + 1;
+  const paddedIndex = String(spriteIndex).padStart(2, '0');
+  const spriteSrc = `/patients/patient-${paddedIndex}.png`;
+
   return (
     <div
       key={snapshot.patientCase.patientId}
@@ -11,12 +16,12 @@ export function PatientPlaceholder() {
         isEntered ? 'patient-entered' : 'patient-offscreen'
       }`}
     >
-      <div className="character-rectangle patient-rectangle">
-        <span className="rect-role">
-          {snapshot.patientCase.patientName.toUpperCase()}
-        </span>
-        <span className="rect-sub">(Patient Placeholder)</span>
-      </div>
+      <img
+        src={spriteSrc}
+        alt={snapshot.patientCase.patientName}
+        className="patient-sprite"
+        draggable={false}
+      />
     </div>
   );
 }
