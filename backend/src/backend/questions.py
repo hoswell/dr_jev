@@ -21,4 +21,4 @@ QUESTIONS: list[Question] = [
     ),
 ]
 
-QUESTION_IDS: set[str] = {q.id for q in QUESTIONS}
+QUESTIONS_BY_ID: dict[str, Question] = {q.id: q for q in QUESTIONS}

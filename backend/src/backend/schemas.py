@@ -37,9 +37,9 @@ class SubmitAnswers(BaseModel):
 
 
 class JevAssessment(BaseModel):
-    criticality: int = Field(ge=0, le=10)
+    criticality: int = Field(ge=0, le=9)
     call_ambulance: bool
     treatment: Treatment
-    patient_honesty: int = Field(ge=0, le=10)
+    patient_honesty: int = Field(ge=0, le=9)
     patient_emotion: PatientEmotion
     kick_out_office: bool
